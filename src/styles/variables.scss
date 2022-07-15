@@ -1,0 +1,10 @@
+$bottom-nav-btn-min-width: 0px !default; //바텀네비 너비 최소값 지정 -> 그래야 폴드 일때도 아이콘 가려지지 않음 (리사이징)
+$bottom-nav-btn-max-width: 3000px !default; //영역 최대한 다가져감 -> pc 버전 펼쳐졌을때 균일한 비율로 꽉차게 가져감
+$tabs-item-min-width: 0px !default; // 위와 같은 이유
+$tabs-item-max-width: 3000px !default; // 위와 같은 이유
+
+$carousel-controls-size: 30px !default; // vuetify slide  ooo 사이즈 옵션인데..
+$carousel-dot-margin: 0 0px !default; //vue-awesome-slider 사용할것 같아서 필요 없을 듯
+
+//$snackbar-wrapper-min-width: 0px !default;
+//$snackbar-wrapper-min-height: 0px !default;
