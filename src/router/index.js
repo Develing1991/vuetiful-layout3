@@ -8,6 +8,14 @@ Vue.use(VueRouter);
 const routes = [
 	{
 		path: '/',
+		redirect: '/ma/main',
+	},
+	{
+		path: '/index.html',
+		redirect: '/ma/main',
+	},
+	{
+		path: '/ma',
 		name: 'MainIndex',
 		component: createComponent(
 			() => import('@/layouts/header/MainAppbar.vue'),
