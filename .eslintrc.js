@@ -3,7 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
+  extends: ["plugin:vue/recommended", "eslint:recommended", "@vue/prettier"],
   parserOptions: {
     parser: "babel-eslint",
   },
@@ -13,9 +13,9 @@ module.exports = {
       'error',
       {
         html: {
-          void: 'always', //빈 태그 항상 /셀프클로징
-          normal: 'never', //일반태그는 제외
-          component: 'always',
+          void: "any", //빈 태그 /셀프클로징 강요 없음 always로 사용하면 ( 자체 확장과 충될되서 <br //> 됨..
+          normal: "never", //일반태그는 제외
+          component: "always"
         },
         svg: 'always',
         math: 'always',
