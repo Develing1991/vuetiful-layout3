@@ -1,6 +1,6 @@
 <template>
 	<v-app-bar app color="white elevation-1">
-		<div @click="$emit('left')">
+		<div @click="$emit('menu', true)">
 			<v-icon>mdi-menu</v-icon>
 		</div>
 		<v-spacer />
@@ -18,7 +18,7 @@
 				outlined
 				append-icon="mdi-magnify"
 				readonly
-				@click="router"
+				@click="routerGo"
 			/>
 			<!-- <v-tabs align-with-title fixed-tabs>
 				<v-text-field
@@ -37,8 +37,12 @@
 
 <script>
 	export default {
+		components: {},
+		data() {
+			return {};
+		},
 		methods: {
-			router() {
+			routerGo() {
 				alert('go 검색페이지');
 			},
 		},

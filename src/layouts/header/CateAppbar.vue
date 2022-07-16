@@ -1,6 +1,6 @@
 <template>
 	<v-app-bar app color="white elevation-1">
-		<span class="font-weight-bold" v-if="true">completed0728</span>
+		<span v-if="true" class="font-weight-bold">completed0728</span>
 		<v-btn
 			v-else
 			color="grey darken-1"
@@ -26,7 +26,7 @@
 		</v-btn>
 		<v-spacer />
 
-		<div @click="$emit('right')">
+		<div @click="$router.go(-1)">
 			<v-icon>mdi-close</v-icon>
 		</div>
 	</v-app-bar>

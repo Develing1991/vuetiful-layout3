@@ -4,7 +4,6 @@ import VueRouter from 'vue-router';
 import createComponent from '@/hoc/index.js';
 
 Vue.use(VueRouter);
-
 const routes = [
 	{
 		path: '/',
