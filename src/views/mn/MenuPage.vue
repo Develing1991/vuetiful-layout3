@@ -1,7 +1,26 @@
 <template>
-	<v-navigation-drawer v-model="slideMenu" absolute temporary width="100%">
+	<v-navigation-drawer
+		v-model="slideMenu"
+		absolute
+		temporary
+		width="100%"
+		stateless
+		overlay-opacity="0"
+		:style="{
+			maxWidth: '720px',
+			marginLeft:
+				$vuetify.breakpoint.width > 720
+					? `${($vuetify.breakpoint.width - 740) / 2}px`
+					: '0px',
+		}"
+	>
 		<!-- <v-app-bar app color="white elevation-1">  app 속성 삭제 -->
-		<v-app-bar color="white elevation-1">
+		<v-app-bar
+			color="white elevation-1"
+			:style="{ maxWidth: '720px', margin: '0 auto' }"
+		>
+			<!-- {{ $vuetify.breakpoint.width }}
+			{{ ($vuetify.breakpoint.width - 740) / 2 }} -->
 			<span v-if="true" class="font-weight-bold">completed0728</span>
 			<v-btn
 				v-else
@@ -59,7 +78,7 @@
 		props: {
 			slideMenu: {
 				type: Boolean,
-				default: false,
+				default: true,
 			},
 		},
 	};

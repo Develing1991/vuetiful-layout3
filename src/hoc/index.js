@@ -1,6 +1,12 @@
-/* eslint-disable */
+///* eslint-disable */
 import Vue from 'vue';
 import MenuPage from '@/views/mn/MenuPage.vue';
+// const isMobile = () => {
+// 	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+// 		navigator.userAgent,
+// 	);
+// };
+
 export default function createComponent(...childs) {
 	const DefaultComponent = Vue.component('TempView', {
 		template: '<div></div>',
@@ -10,13 +16,25 @@ export default function createComponent(...childs) {
 			return {
 				message: '메시지테스트',
 				slideMenu: false,
+				maxWidth: '720px',
+				margin: '0 auto',
 			};
+		},
+		mixin: [''],
+		computed: {
+			isMobile() {
+				const isMobile =
+					/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+						navigator.userAgent,
+					);
+				return !isMobile ? '720px' : '';
+			},
 		},
 		template: `
     <div>
-      <CustomAppbar @menu="menu"  @left="clickLeft" @center="clickCenter" @right="clickRight"></CustomAppbar>
-      <CustomView></CustomView>
-      <CustomFooter></CustomFooter>
+      <CustomAppbar @menu="menu"  @left="clickLeft" @center="clickCenter" @right="clickRight" :style="{maxWidth:maxWidth, margin:margin}"></CustomAppbar>
+      <CustomView :style="{maxWidth:maxWidth, margin:margin}"></CustomView>
+      <CustomFooter :style="{maxWidth:maxWidth, margin:margin}"></CustomFooter>
 	  <MenuPage :slideMenu="slideMenu" @menu="menu"/>
     </div>
     `,
@@ -26,7 +44,6 @@ export default function createComponent(...childs) {
 			CustomView: childs[1] ?? DefaultComponent,
 			CustomFooter: childs[2] ?? DefaultComponent,
 		},
-		computed: {},
 		mounted() {
 			console.log('index.vue생성');
 		},
