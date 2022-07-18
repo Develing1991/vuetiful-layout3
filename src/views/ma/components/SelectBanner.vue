@@ -1,5 +1,5 @@
 <template>
-	<v-container class="pa-1">
+	<v-container class="pa-1 mt-3">
 		<v-row>
 			<v-col
 				v-for="item in items"
@@ -36,10 +36,7 @@
 						{{ cateA.title }}
 					</v-chip>
 				</v-chip-group>
-				<div
-					class="mx-2"
-					style="height: 150px; max-height: 150px; overflow-y: auto"
-				>
+				<div class="mx-2" style="max-height: 150px; overflow-y: auto">
 					<a
 						v-for="brand in brands"
 						:key="brand.cd"
@@ -55,10 +52,7 @@
 		</v-row>
 		<v-row v-show="isDone.id === 'brand'">
 			<v-col>
-				<div
-					class="mx-2"
-					style="height: 150px; max-height: 150px; overflow-y: auto"
-				>
+				<div class="mx-2" style="max-height: 150px; overflow-y: auto">
 					<v-card
 						v-for="i in 15"
 						:key="i"
@@ -80,7 +74,7 @@
 		</v-row>
 		<v-row v-show="isDone.id === 'price'">
 			<v-col>
-				<div style="height: 150px; max-height: 150px; overflow: auto">
+				<div style="max-height: 150px; overflow: auto">
 					<v-chip-group
 						mandatory
 						active-class="primary--text"
@@ -93,10 +87,6 @@
 					</v-chip-group>
 				</div>
 			</v-col>
-		</v-row>
-
-		<v-row>
-			<v-divider />
 		</v-row>
 	</v-container>
 </template>
