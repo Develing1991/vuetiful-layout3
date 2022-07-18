@@ -30,6 +30,22 @@ const routes = [
 		],
 	},
 	{
+		path: '/mn',
+		name: 'MenuIndex',
+		component: createComponent(
+			() => import('@/layouts/header/CateAppbar.vue'),
+			() => import('@/layouts/main/BaseView.vue'),
+			//() => import('@/layouts/footer/BaseFooter.vue'),
+		),
+		children: [
+			{
+				path: 'main',
+				name: 'MenuPage',
+				component: () => import('@/views/mn/MenuPage.vue'),
+			},
+		],
+	},
+	{
 		path: '/about',
 		name: 'About',
 		// route level code-splitting

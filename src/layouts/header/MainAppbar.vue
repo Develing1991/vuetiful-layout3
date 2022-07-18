@@ -1,6 +1,6 @@
 <template>
 	<v-app-bar app color="white elevation-1">
-		<div @click="$emit('menu', true)">
+		<div @click="$router.push({ name: 'MenuPage' })">
 			<v-icon>mdi-menu</v-icon>
 		</div>
 		<v-spacer />
