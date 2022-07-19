@@ -88,12 +88,7 @@
 			}"
 		>
 			<SwiperSlide v-for="i in 15" :key="i" style="height: 160px" class="ma-0">
-				<v-card
-					class="d-inline-block pa-2 ma-2"
-					style="text-align: center"
-					tile
-					elevation="0"
-				>
+				<v-card class="d-inline-block pa-2 ma-2" tile elevation="0">
 					<v-img
 						class="white--text align-end"
 						height="80px"
@@ -123,7 +118,73 @@
 				</div>
 			</SwiperSlide>
 		</SlideBanner>
-		<v-divider />
+
+		<!-- 공지사항 -->
+		<BaseBanner :use-title="true" title="공지사항" :show-all="true">
+			<v-card class="mx-auto mt-2" tile elevation="0" outlined>
+				<v-list-item dense>
+					<v-list-item-content>
+						<v-list-item-title
+							>[안내] 공지사항 제목이 노출됩니다. 노출 길이 제한은 얼마로
+							가나다라마바사아자차카타파하</v-list-item-title
+						>
+						<v-list-item-subtitle>2022.00.00</v-list-item-subtitle>
+					</v-list-item-content>
+				</v-list-item>
+				<v-divider />
+				<v-list-item dense>
+					<v-list-item-content>
+						<v-list-item-title
+							>[안내] 공지사항 제목이 노출됩니다. 노출 길이 제한은 얼마로
+							가나다라마바사아자차카타파하</v-list-item-title
+						>
+						<v-list-item-subtitle>2022.00.00</v-list-item-subtitle>
+					</v-list-item-content>
+				</v-list-item>
+				<v-divider />
+				<v-list-item dense>
+					<v-list-item-content>
+						<v-list-item-title
+							>[안내] 공지사항 제목이 노출됩니다. 노출 길이 제한은 얼마로
+							가나다라마바사아자차카타파하</v-list-item-title
+						>
+						<v-list-item-subtitle>2022.00.00</v-list-item-subtitle>
+					</v-list-item-content>
+				</v-list-item>
+			</v-card>
+		</BaseBanner>
+		<!-- 고객센터 -->
+		<BaseBanner :use-title="true" title="고객센터">
+			<v-card class="mx-auto" max-width="450" elevation="0" tile>
+				<v-list-item dense>
+					<v-list-item-content class="pa-2" style="border: 1px solid grey">
+						<v-list-item-title class="my-1 text-center">
+							평일 09:00~18:00 (토/일/공휴일 휴무)
+						</v-list-item-title>
+						<v-list-item-title class="my-1 text-center">
+							※ 점심시간 : 12:00 ~ 13:00
+						</v-list-item-title>
+						<v-list-item-subtitle
+							class="primary--text text-h5 my-1 py-2 text-center"
+						>
+							1644-5000
+						</v-list-item-subtitle>
+					</v-list-item-content>
+					<div
+						class="secondary lighten-2 white--text font-weight-bold ml-2"
+						style="
+							width: 80px;
+							height: 106px;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+						"
+					>
+						FAQ
+					</div>
+				</v-list-item>
+			</v-card>
+		</BaseBanner>
 	</div>
 </template>
 
@@ -132,6 +193,7 @@
 	import SelectBanner from '@/views/ma/components/SelectBanner.vue';
 	import SlideBannerCard from '@/views/ma/components/SlideBannerCard.vue';
 
+	import BaseBanner from '@/views/ma/components/BaseBanner.vue';
 	import { SwiperSlide } from 'vue-awesome-swiper';
 	export default {
 		components: {
@@ -139,6 +201,7 @@
 			SelectBanner,
 			SlideBannerCard,
 			SwiperSlide,
+			BaseBanner,
 		},
 		data() {
 			return {

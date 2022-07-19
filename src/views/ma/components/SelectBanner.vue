@@ -57,7 +57,6 @@
 						v-for="i in 15"
 						:key="i"
 						class="d-inline-block ma-2"
-						style="text-align: center"
 						tile
 						elevation="0"
 						outlined

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div v-if="useTitle" style="text-align: center" class="mt-13 mb-10 mx-3">
+		<div v-if="useTitle" class="mt-12 mb-6 mx-3 text-center">
 			<div class="font-weight-bold" style="font-size: 20px">{{ title }}</div>
 			<div class="primary--text" style="font-size: 12px">
 				{{ subTitle }}

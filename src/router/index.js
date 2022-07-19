@@ -19,7 +19,7 @@ const routes = [
 		component: createComponent(
 			() => import('@/layouts/header/MainAppbar.vue'),
 			() => import('@/layouts/main/BaseView.vue'),
-			//() => import('@/layouts/footer/BaseFooter.vue'),
+			() => import('@/layouts/footer/BaseFooter.vue'),
 		),
 		children: [
 			{
