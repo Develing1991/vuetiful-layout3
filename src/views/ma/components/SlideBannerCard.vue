@@ -1,5 +1,5 @@
 <template>
-	<v-card tile class="pt-1" ripple>
+	<v-card tile class="pt-1" ripple height="100%">
 		<v-img
 			:src="productItem.image"
 			class="white--text align-end ma-2"

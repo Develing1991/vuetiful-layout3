@@ -1,6 +1,6 @@
 <template>
 	<v-app-bar app color="white elevation-1">
-		<v-icon @click="$emit('left')">mdi-arrow-left</v-icon>
+		<v-icon @click="$router.go(-1)">mdi-arrow-left</v-icon>
 
 		<v-text-field
 			placeholder="프로모션 텍스트 노출"
@@ -11,8 +11,12 @@
 			append-icon="mdi-magnify"
 			@click:append="aaa"
 		/>
-		<v-icon>mdi-home-outline</v-icon>
-		<v-icon>mdi-account-outline</v-icon>
+
+		<template v-if="isProductPage">
+			<v-icon>mdi-home-outline</v-icon>
+			<v-icon>mdi-account-outline</v-icon>
+		</template>
+
 		<!-- <v-spacer />
 		<div @click="$emit('right')">
 			<v-icon>mdi-account-outline</v-icon>
@@ -22,6 +26,14 @@
 
 <script>
 	export default {
+		computed: {
+			isProductPage() {
+				return this.$route.fullPath.startsWith('/pd');
+			},
+		},
+		mounted() {
+			console.log(this.$route.fullPath);
+		},
 		methods: {
 			aaa() {
 				alert('검색!');

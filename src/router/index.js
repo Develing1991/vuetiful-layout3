@@ -39,9 +39,25 @@ const routes = [
 		),
 		children: [
 			{
-				path: 'main',
+				path: 'menu',
 				name: 'MenuPage',
 				component: () => import('@/views/mn/MenuPage.vue'),
+			},
+		],
+	},
+	{
+		path: '/sc',
+		name: 'SearchIndex',
+		component: createComponent(
+			() => import('@/layouts/header/SearchAppbar.vue'),
+			() => import('@/layouts/main/BaseView.vue'),
+			//() => import('@/layouts/footer/CateFooter.vue'),
+		),
+		children: [
+			{
+				path: 'search',
+				name: 'SearchWordPage',
+				component: () => import('@/views/sc/SearchWordPage.vue'),
 			},
 		],
 	},

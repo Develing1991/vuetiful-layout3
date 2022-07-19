@@ -12,14 +12,14 @@
 		<template v-slot:extension app>
 			<v-text-field
 				placeholder="프로모션 텍스트 노출"
-				class="mx-3"
+				class="mx-3 mb-2"
 				rounded
 				dense
 				outlined
 				append-icon="mdi-magnify"
 				readonly
 				:hide-details="true"
-				@click="routerGo"
+				@click="$router.push({ name: 'SearchWordPage' })"
 			/>
 			<!-- <v-tabs align-with-title fixed-tabs>
 				<v-text-field
