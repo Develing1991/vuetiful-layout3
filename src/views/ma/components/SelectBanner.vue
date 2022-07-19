@@ -8,7 +8,7 @@
 				class="pa-0"
 			>
 				<v-btn
-					:class="{ orange: item.done, 'white--text': item.done }"
+					:class="{ primary: item.done, 'white--text': item.done }"
 					width="100%"
 					elevation="1"
 					x-large
@@ -36,7 +36,7 @@
 						{{ cateA.title }}
 					</v-chip>
 				</v-chip-group>
-				<div class="mx-2" style="max-height: 150px; overflow-y: auto">
+				<div class="mx-2 overflow-y-auto" style="max-height: prprimary">
 					<a
 						v-for="brand in brands"
 						:key="brand.cd"
@@ -52,17 +52,20 @@
 		</v-row>
 		<v-row v-show="isDone.id === 'brand'">
 			<v-col>
-				<div class="mx-2" style="max-height: 150px; overflow-y: auto">
+				<div class="mx-2 overflow-y-auto" style="max-height: prprimary">
 					<v-card
 						v-for="i in 15"
 						:key="i"
-						class="d-inline-block pa-2 ma-2"
+						class="d-inline-block ma-2"
 						style="text-align: center"
+						tile
+						elevation="0"
+						outlined
 					>
 						<v-img
 							class="white--text align-end"
-							height="80px"
-							width="80px"
+							height="90px"
+							width="90px"
 							src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
 						/>
 						<v-card-title class="pa-0">
@@ -74,7 +77,7 @@
 		</v-row>
 		<v-row v-show="isDone.id === 'price'">
 			<v-col>
-				<div style="max-height: 150px; overflow: auto">
+				<div class="overflow-y-auto" style="max-height: prprimary">
 					<v-chip-group
 						mandatory
 						active-class="primary--text"

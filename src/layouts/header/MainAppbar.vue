@@ -12,12 +12,13 @@
 		<template v-slot:extension app>
 			<v-text-field
 				placeholder="프로모션 텍스트 노출"
-				class="mt-4 mx-3"
+				class="mx-3"
 				rounded
 				dense
 				outlined
 				append-icon="mdi-magnify"
 				readonly
+				:hide-details="true"
 				@click="routerGo"
 			/>
 			<!-- <v-tabs align-with-title fixed-tabs>

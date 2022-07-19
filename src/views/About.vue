@@ -8,7 +8,7 @@
 				class="pa-0"
 			>
 				<v-btn
-					:class="{ orange: item.done, 'white--text': item.done }"
+					:class="{ primary: item.done, 'white--text': item.done }"
 					width="100%"
 					elevation="1"
 					x-large

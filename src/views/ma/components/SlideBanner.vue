@@ -1,14 +1,15 @@
 <template>
 	<div>
-		<div v-if="useTitle" style="text-align: center" class="my-5 mx-3">
+		<div v-if="useTitle" style="text-align: center" class="mt-13 mb-10 mx-3">
 			<div class="font-weight-bold" style="font-size: 20px">{{ title }}</div>
-			<div style="font-size: 12px">{{ subTitle }}</div>
+			<div class="primary--text" style="font-size: 12px">
+				{{ subTitle }}
+			</div>
 		</div>
-		<swiper
-			class="swiper"
-			:options="swiperOption"
-			:style="`height:${height}px;`"
-		>
+		<div v-if="showAll" class="ml-4 subtitle-2" @click="$emit('showAll')">
+			전체보기 +
+		</div>
+		<swiper :options="swiperOption" :style="`height:${height}px;`">
 			<!-- <swiper-slide>Slide 1</swiper-slide>
 		<swiper-slide>Slide 2</swiper-slide>
 		<swiper-slide>Slide 3</swiper-slide>
@@ -33,6 +34,22 @@
 		// name: 'SwiperExamplePagination',
 		// title: 'Pagination',
 		props: {
+			useTitle: {
+				type: Boolean,
+				default: false,
+			},
+			title: {
+				type: String,
+				default: '',
+			},
+			subTitle: {
+				type: String,
+				default: '',
+			},
+			showAll: {
+				type: Boolean,
+				default: false,
+			},
 			options: {
 				type: Object,
 				default: () => ({
@@ -48,18 +65,6 @@
 			page: {
 				type: Boolean,
 				default: true,
-			},
-			useTitle: {
-				type: Boolean,
-				default: false,
-			},
-			title: {
-				type: String,
-				default: '',
-			},
-			subTitle: {
-				type: String,
-				default: '',
 			},
 		},
 		data() {
