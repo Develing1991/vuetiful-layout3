@@ -1,47 +1,62 @@
 <template>
 	<v-container>
-		<v-row>
+		<v-row :style="{ height: `${menuHeight}px` }">
 			<v-col class="pa-0">
-				<v-card tile elevation="0" outlined>
-					<v-list-item dense>
+				<v-card tile elevation="0">
+					<v-list-item dense class="mt-2">
 						<v-list-item-content>
 							<v-list-item-title>
 								<v-row jutify="center">
 									<v-col cols="4" class="text-center">
-										<v-avatar
-											color="grey lighten-2"
-											class="mb-2"
-											rounded
-											size="50"
-										/>
-										<div>마이페이지</div>
+										<v-card class="pa-0 ma-0" ripple tile elevation="0">
+											<v-avatar
+												color="grey lighten-2"
+												class="mb-2"
+												rounded
+												size="50"
+											/>
+											<div>마이페이지</div>
+										</v-card>
 									</v-col>
 									<v-col cols="4" class="text-center">
-										<v-avatar
-											color="grey lighten-2"
-											class="mb-2"
-											rounded
-											size="50"
-										/>
-										<div>찜목록</div>
+										<v-card class="pa-0 ma-0" ripple tile elevation="0">
+											<v-avatar
+												color="grey lighten-2"
+												class="mb-2"
+												rounded
+												size="50"
+											/>
+											<div>찜목록</div>
+										</v-card>
 									</v-col>
 									<v-col cols="4" class="text-center">
-										<v-avatar
-											color="grey lighten-2"
-											class="mb-2"
-											rounded
-											size="50"
-										/>
-										<div>메시지관리</div>
+										<v-card class="pa-0 ma-0" ripple tile elevation="0">
+											<v-avatar
+												color="grey lighten-2"
+												class="mb-2"
+												rounded
+												size="50"
+											/>
+											<div>메시지관리</div>
+										</v-card>
 									</v-col>
 								</v-row>
 							</v-list-item-title>
 						</v-list-item-content>
 					</v-list-item>
 				</v-card>
+				<v-divider />
 			</v-col>
 		</v-row>
-		<v-row style="height: 480px">
+
+		<v-row
+			:style="{
+				height: `${
+					$vuetify.breakpoint.height -
+					($vuetify.application.footer + $vuetify.application.top + menuHeight)
+				}px`,
+			}"
+		>
 			<v-col class="pa-0" cols="4" style="border-right: 1px solid #ddd">
 				<template v-for="category in categories">
 					<v-btn
@@ -76,7 +91,7 @@
 				</v-card>
 			</v-col>
 		</v-row>
-		<v-row>
+		<!-- <v-row>
 			<v-col class="pa-0">
 				<v-card tile elevation="0" outlined>
 					<v-list-item dense>
@@ -124,7 +139,7 @@
 					</v-list-item>
 				</v-card>
 			</v-col>
-		</v-row>
+		</v-row> -->
 	</v-container>
 </template>
 
@@ -132,6 +147,7 @@
 	export default {
 		data() {
 			return {
+				menuHeight: 100,
 				selectCateBrands: {},
 				categories: [
 					{
@@ -190,6 +206,7 @@
 			this.initBrands();
 			// document.getElementsByClassName('v-tabs-items')[0].style.borderLeft =
 			// 	'1px solid rgba(0, 0, 0, 0.12)';
+			console.log(this.$vuetify);
 		},
 		methods: {
 			initBrands() {

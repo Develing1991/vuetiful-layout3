@@ -1,7 +1,7 @@
 <template>
 	<!-- <v-footer class="pa-0" :app="useApp"> 푸터입니당 </v-footer> -->
-	<v-footer padless :app="useApp" class="mt-10">
-		<v-card flat tile class="secondary lighten-5">
+	<v-footer padless app absolute>
+		<v-card flat tile class="secondary lighten-5" width="100%">
 			<v-card-text class="black--text">
 				회원이용약관 | 개인정보처리방침
 			</v-card-text>
@@ -30,12 +30,6 @@
 
 <script>
 	export default {
-		props: {
-			useApp: {
-				type: Boolean,
-				default: false,
-			},
-		},
 		data: () => ({
 			icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'],
 		}),

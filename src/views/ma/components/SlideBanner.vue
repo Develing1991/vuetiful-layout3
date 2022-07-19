@@ -60,7 +60,7 @@
 			},
 			height: {
 				type: String,
-				default: '250',
+				default: '310',
 			},
 			page: {
 				type: Boolean,

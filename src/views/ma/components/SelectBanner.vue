@@ -60,6 +60,7 @@
 						tile
 						elevation="0"
 						outlined
+						ripple
 					>
 						<v-img
 							class="white--text align-end"

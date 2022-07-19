@@ -35,7 +35,7 @@ const routes = [
 		component: createComponent(
 			() => import('@/layouts/header/CateAppbar.vue'),
 			() => import('@/layouts/main/BaseView.vue'),
-			//() => import('@/layouts/footer/BaseFooter.vue'),
+			() => import('@/layouts/footer/CateFooter.vue'),
 		),
 		children: [
 			{

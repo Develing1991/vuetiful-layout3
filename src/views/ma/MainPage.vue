@@ -1,6 +1,7 @@
 <template>
-	<div class="ma-2">
+	<div class="ma-2 mb-10">
 		<!-- 최상단 배너 -->
+
 		<SlideBanner height="200" class="mb-6">
 			<SwiperSlide v-for="i in 3" :key="i">
 				<v-img
@@ -55,7 +56,6 @@
 		</SlideBanner>
 		<!-- 꿀콘 신상 -->
 		<SlideBanner
-			height="250"
 			:use-title="true"
 			title="꿀콘 신상"
 			sub-title=""
@@ -82,17 +82,30 @@
 			:show-all="true"
 			:page="true"
 			:options="{
-				slidesPerView: 4,
+				slidesPerView: 3, //여기 화면 값 맞춰서 숫자 바꿔줘야함
 				slidesPerColumn: 2,
 				spaceBetween: 10,
 			}"
 		>
+			<!-- <SwiperSlide
+				v-for="productItem in productList"
+				:key="productItem.product_cd"
+			>
+				<SlideBannerCard :product-item="productItem" @wish="wishDoit" />
+			</SwiperSlide> -->
 			<SwiperSlide v-for="i in 15" :key="i" style="height: 160px" class="ma-0">
-				<v-card class="d-inline-block pa-2 ma-2" tile elevation="0">
+				<v-card
+					class="d-inline-block pa-2 ma-2"
+					tile
+					elevation="0"
+					ripple
+					width="100%"
+					style="justify-conetent: center; text-align: center"
+				>
 					<v-img
-						class="white--text align-end"
+						class="white--text align-end d-inline-block"
 						height="80px"
-						width="80px"
+						width="70%"
 						src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
 					/>
 					<v-card-title class="pa-0">
@@ -359,6 +372,9 @@
 					},
 				],
 			};
+		},
+		mounted() {
+			console.log(this.$vuetify);
 		},
 		methods: {
 			wishDoit(item) {

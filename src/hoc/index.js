@@ -30,9 +30,9 @@ export default function createComponent(...childs) {
 			},
 		},
 		template: `
-    <div>
+    <div >
       <CustomAppbar   @left="clickLeft" @center="clickCenter" @right="clickRight" :style="{maxWidth:maxWidth, margin:margin}"></CustomAppbar>
-      <CustomView :style="{maxWidth:maxWidth, margin:margin}"></CustomView>
+      <CustomView :style="{maxWidth:maxWidth, margin:margin}" ></CustomView>
       <CustomFooter :style="{maxWidth:maxWidth, margin:margin}"></CustomFooter>
     </div>
     `,
