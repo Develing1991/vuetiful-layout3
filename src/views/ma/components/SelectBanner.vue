@@ -36,7 +36,7 @@
 						{{ cateA.title }}
 					</v-chip>
 				</v-chip-group>
-				<div class="mx-2 overflow-y-auto" style="max-height: prprimary">
+				<div class="mx-2 overflow-y-auto" style="max-height: 200px">
 					<a
 						v-for="brand in brands"
 						:key="brand.cd"
@@ -52,7 +52,7 @@
 		</v-row>
 		<v-row v-show="isDone.id === 'brand'">
 			<v-col>
-				<div class="mx-2 overflow-y-auto" style="max-height: prprimary">
+				<div class="mx-2 overflow-y-auto" style="max-height: 200px">
 					<v-card
 						v-for="i in 15"
 						:key="i"
@@ -77,7 +77,7 @@
 		</v-row>
 		<v-row v-show="isDone.id === 'price'">
 			<v-col>
-				<div class="overflow-y-auto" style="max-height: prprimary">
+				<div class="overflow-y-auto" style="max-height: 200px">
 					<v-chip-group
 						mandatory
 						active-class="primary--text"
