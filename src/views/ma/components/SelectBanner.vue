@@ -51,7 +51,7 @@
 			</v-col>
 		</v-row>
 		<v-row v-show="isDone.id === 'brand'">
-			<v-col>
+			<v-col class="text-center">
 				<div class="mx-2 overflow-y-auto" style="max-height: 200px">
 					<v-card
 						v-for="i in 15"

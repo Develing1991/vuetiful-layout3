@@ -32,7 +32,7 @@
 				v-for="productItem in productList"
 				:key="productItem.product_cd"
 			>
-				<SlideBannerCard :product-item="productItem" @wish="wishDoit" />
+				<ProductCard :product-item="productItem" @wish="wishDoit" />
 			</SwiperSlide>
 		</SlideBanner>
 		<!-- 인기상품 -->
@@ -51,7 +51,7 @@
 				v-for="productItem in productList"
 				:key="productItem.product_cd"
 			>
-				<SlideBannerCard :product-item="productItem" @wish="wishDoit" />
+				<ProductCard :product-item="productItem" @wish="wishDoit" />
 			</SwiperSlide>
 		</SlideBanner>
 		<!-- 꿀콘 신상 -->
@@ -70,7 +70,7 @@
 				v-for="productItem in productList"
 				:key="productItem.product_cd"
 			>
-				<SlideBannerCard :product-item="productItem" @wish="wishDoit" />
+				<ProductCard :product-item="productItem" @wish="wishDoit" />
 			</SwiperSlide>
 		</SlideBanner>
 		<!-- 인기 브랜드 -->
@@ -91,7 +91,7 @@
 				v-for="productItem in productList"
 				:key="productItem.product_cd"
 			>
-				<SlideBannerCard :product-item="productItem" @wish="wishDoit" />
+				<ProductCard :product-item="productItem" @wish="wishDoit" />
 			</SwiperSlide> -->
 			<SwiperSlide v-for="i in 15" :key="i" style="height: 160px" class="ma-0">
 				<v-card
@@ -204,15 +204,15 @@
 <script>
 	import SlideBanner from '@/views/ma/components/SlideBanner.vue';
 	import SelectBanner from '@/views/ma/components/SelectBanner.vue';
-	import SlideBannerCard from '@/views/ma/components/SlideBannerCard.vue';
 
 	import BaseBanner from '@/views/ma/components/BaseBanner.vue';
 	import { SwiperSlide } from 'vue-awesome-swiper';
+	import ProductCard from '@/components/card/ProductCard.vue';
 	export default {
 		components: {
 			SlideBanner,
 			SelectBanner,
-			SlideBannerCard,
+			ProductCard,
 			SwiperSlide,
 			BaseBanner,
 		},
@@ -251,7 +251,7 @@
 					{
 						product_cd: 'P01',
 						brand_name: '브랜드',
-						title: '발행 상품명 글자수 제한 두 줄로 표시',
+						title: '발행 상품명 글자수 제한 두 줄로 표시eeee',
 						disc_rat: '25',
 						seller_prc: '3375',
 						cust_prc: '4000',
