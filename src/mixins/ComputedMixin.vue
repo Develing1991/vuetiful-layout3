@@ -2,7 +2,7 @@
 	export default {
 		computed: {
 			isGalaxyFold() {
-				return this.$vuetify.breakpoint.width < 310;
+				return this.$vuetify.breakpoint.width < 320;
 			},
 		},
 	};

@@ -1,5 +1,5 @@
 <template>
-	<v-container :class="{ 'px-5': isGalaxyFold, 'px-15': !isGalaxyFold }">
+	<v-container :class="{ 'px-5': isGalaxyFold, 'px-10': !isGalaxyFold }">
 		<div class="mt-6 mb-6 mx-3 text-center">
 			<div class="font-weight-bold" style="font-size: 20px">{{ title }}</div>
 		</div>
@@ -8,6 +8,7 @@
 				v-for="productItem in productList"
 				:key="productItem.product_cd"
 				cols="6"
+				:class="{ 'px-1': true, 'px-5': $vuetify.breakpoint.sm }"
 			>
 				<ProductCard :product-item="productItem" @wish="wishDoit" />
 			</v-col>
