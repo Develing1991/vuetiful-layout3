@@ -12,45 +12,38 @@
 		>
 			{{ productItem.disc_rat }}%
 		</div>
-		<v-card-subtitle class="px-2 py-0 ma-0" style="font-size: 12px">
-			[{{ productItem.brand_name }}]
-		</v-card-subtitle>
-		<v-card-title
-			ref="prd_title"
-			class="px-2 py-0 ma-0"
-			style="
-				font-size: 12px;
-				line-height: 20px !important;
-				min-height: 40px;
-				align-items: start;
-			"
-		>
-			<!-- {{ productItem.title }} -->
-			{{ resetTitle }}
-		</v-card-title>
+		<v-list three-line class="pa-0">
+			<v-list-item class="pa-0">
+				<v-list-item-content class="pa-0 pt-2" style="align-items: start">
+					<v-list-item-subtitle
+						class="px-2 py-0 ma-0 black--text"
+						style="line-height: 20px !important; min-height: 40px"
+					>
+						{{ productItem.title }}
+					</v-list-item-subtitle>
+					<v-list-title>
+						<div class="px-2 mt-2 py-0 ma-0" style="font-size: 12px">
+							[{{ productItem.brand_name }}]
+						</div>
 
-		<!-- {{ $vuetify.breakpoint.xs }}
-		{{ $vuetify.breakpoint.sm }}
-		{{ $vuetify.breakpoint.md }}
-		{{ $vuetify.breakpoint.lg }}
-		{{ $vuetify.breakpoint.xl }} -->
+						<div
+							class="px-2 mt-2 font-weight-bold red--text"
+							style="font-size: 16px"
+						>
+							{{ productItem.seller_prc | commaFilter }}원
+						</div>
+						<div
+							class="px-2 mt-2 text-decoration-line-through"
+							style="font-size: 12px"
+						>
+							{{ productItem.cust_prc | commaFilter }}원
+						</div>
+					</v-list-title>
+				</v-list-item-content>
+			</v-list-item>
+		</v-list>
+
 		<v-card-actions class="py-0">
-			<div>
-				<div
-					class="font-weight-bold red--text my-1"
-					style="font-size: 16px"
-					:class="{ fontSizeSellerPrc: isGalaxyFold }"
-				>
-					{{ productItem.seller_prc | commaFilter }}원
-				</div>
-				<div
-					class="text-decoration-line-through"
-					style="font-size: 12px"
-					:class="{ fontSizeCustPrc: isGalaxyFold }"
-				>
-					{{ productItem.cust_prc | commaFilter }}원
-				</div>
-			</div>
 			<v-spacer />
 			<v-btn icon class="px-0" @click="$emit('wish', productItem.product_cd)">
 				<v-icon>mdi-heart-outline</v-icon>
@@ -61,9 +54,8 @@
 
 <script>
 	import FilterMixin from '@/mixins/FilterMixin.vue';
-	import ComputedMixin from '@/mixins/ComputedMixin.vue';
 	export default {
-		mixins: [FilterMixin, ComputedMixin],
+		mixins: [FilterMixin],
 		props: {
 			productItem: {
 				type: Object,
@@ -100,54 +92,10 @@
 		mounted() {
 			//swiper ui까지 완료된 이후 동작
 			this.$nextTick(function () {
-				this.titleElipsis();
+				//this.titleElipsis();
 			});
-		},
-		methods: {
-			titleElipsis() {
-				const title = this.productItem.title;
-
-				const titleWidth = this.$refs.prd_title.clientWidth;
-
-				const titleLength = this.productItem.title.length;
-				//fontsize px,같은 문자는 제거
-				const fontSize = Number(
-					this.$refs.prd_title.style.fontSize
-						.split('')
-						.filter(num => {
-							return !!Number(num);
-						})
-						.join(''),
-				);
-				//최대 라인 보여줄 수
-				const maxLine = 2;
-
-				//106 /
-				//21  * 12 /106 = 2.3777  -> 2줄 하고 3글자... 임  > 2 (내가설정한 2라인보다 크면)
-				// console.log(title);
-				// console.log((titleLength * fontSize) / titleWidth);
-				if ((titleLength * fontSize) / titleWidth > maxLine) {
-					this.resetTitle =
-						title.substr(0, (titleWidth / fontSize) * maxLine - 2) + '...';
-					console.log(this.resetTitle);
-				} else {
-					this.resetTitle = title;
-				}
-
-				// console.log(this.productItem.title);
-				// console.log(this.productItem.title.length);
-				// console.log(this.$refs.prd_title.clientWidth);
-				// console.log(this.$refs.prd_title.style.fontSize);
-			},
 		},
 	};
 </script>
 
-<style>
-	.fontSizeSellerPrc {
-		font-size: 12px !important;
-	}
-	.fontSizeCustPrc {
-		font-size: 10px !important;
-	}
-</style>
+<style></style>

@@ -56,8 +56,13 @@ const routes = [
 		children: [
 			{
 				path: 'search',
-				name: 'SearchWordPage',
-				component: () => import('@/views/sc/SearchWordPage.vue'),
+				name: 'SrchWordPage',
+				component: () => import('@/views/sc/SrchWordPage.vue'),
+			},
+			{
+				path: 'search-rslt',
+				name: 'SrchRsltPage',
+				component: () => import('@/views/sc/SrchRsltPage.vue'),
 			},
 		],
 	},

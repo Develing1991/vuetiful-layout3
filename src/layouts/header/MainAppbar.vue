@@ -19,7 +19,7 @@
 				append-icon="mdi-magnify"
 				readonly
 				:hide-details="true"
-				@click="$router.push({ name: 'SearchWordPage' })"
+				@click="$router.push({ name: 'SrchWordPage' })"
 			/>
 			<!-- <v-tabs align-with-title fixed-tabs>
 				<v-text-field

@@ -9,7 +9,7 @@
 			dense
 			outlined
 			append-icon="mdi-magnify"
-			@click:append="aaa"
+			@click:append="$router.push({ name: 'SrchRsltPage' })"
 		/>
 
 		<template v-if="isProductPage">
