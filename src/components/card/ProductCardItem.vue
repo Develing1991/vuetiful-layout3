@@ -21,7 +21,7 @@
 					>
 						{{ productItem.title }}
 					</v-list-item-subtitle>
-					<v-list-title>
+					<v-list-item-title>
 						<div class="px-2 mt-2 py-0 ma-0" style="font-size: 12px">
 							[{{ productItem.brand_name }}]
 						</div>
@@ -38,7 +38,7 @@
 						>
 							{{ productItem.cust_prc | commaFilter }}원
 						</div>
-					</v-list-title>
+					</v-list-item-title>
 				</v-list-item-content>
 			</v-list-item>
 		</v-list>

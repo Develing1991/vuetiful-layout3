@@ -17,6 +17,7 @@
 						small
 						tile
 						elevation="0"
+						@click="slideOpen('A01')"
 						>카페 ▼
 					</v-btn>
 					<v-btn
@@ -25,6 +26,7 @@
 						small
 						tile
 						elevation="0"
+						@click="slideOpen('B01')"
 						>브랜드 ▼
 					</v-btn>
 				</v-col>
@@ -35,56 +37,27 @@
 						small
 						tile
 						elevation="0"
+						@click="slideOpen('C01')"
 						>인기상품순 ▼
 					</v-btn>
 				</v-col>
 			</v-row>
 			<v-divider />
-			<template>
-				<div @click="bb">
-					<v-list three-line>
-						<v-list-item>
-							<v-list-item-avatar tile size="90" color="grey">
-								<v-img
-									src="https://thumbnail6.coupangcdn.com/thumbnails/remote/300x300ex/image/product/image/vendoritem/2019/02/11/3186737276/e4f9115d-ff6d-406c-8e9e-52382c5b0abc.jpg"
-								/>
-							</v-list-item-avatar>
-							<v-list-item-content>
-								<v-list-item-subtitle
-									class="grey--text font-weight-bold mb-1 text-caption"
-								>
-									[브랜드명]
-								</v-list-item-subtitle>
-								<v-list-item-subtitle class="font-weight-bold my-2 body-2">
-									알록패치 싱글 근육통 통증완화 의료기기 적외선 조사기, 엘립시스
-									적용 하이ㅋ
-								</v-list-item-subtitle>
-								<v-list-item-subtitle>
-									<span class="font-weight-bold subtitle-2 red--text">45%</span>
-									<span
-										class="text-caption text-decoration-line-through ml-2 grey--text"
-									>
-										10,000원
-									</span>
-								</v-list-item-subtitle>
-								<v-list-item-subtitle>
-									<span class="font-weight-bold red--text subtitle-1"
-										>5,500원</span
-									>
-								</v-list-item-subtitle>
-							</v-list-item-content>
-							<v-list-item-action class="my-auto">
-								<v-list-item-icon class="ma-auto" @click.stop="aa">
-									<v-icon :color="true ? 'red' : 'grey'">
-										{{ true ? 'mdi-heart' : 'mdi-heart-outline' }}
-									</v-icon>
-								</v-list-item-icon>
-							</v-list-item-action>
-						</v-list-item>
-					</v-list>
-					<v-divider />
-				</div>
-			</template>
+			<ProductListItem />
+			<BottomSlideModal :show-slide="showSlide">
+				<SheetCategory
+					v-show="slide_target_cd === 'A01'"
+					@close="showSlide = false"
+				/>
+				<SheetBrands
+					v-show="slide_target_cd === 'B01'"
+					@close="showSlide = false"
+				/>
+				<SheetOrderBy
+					v-show="slide_target_cd === 'C01'"
+					@close="showSlide = false"
+				/>
+			</BottomSlideModal>
 		</v-card>
 
 		<!-- <template>
@@ -101,20 +74,41 @@
 
 <script>
 	//import DefaultRsltPage from '@/views/no/DefaultRsltPage.vue';
-
+	import ProductListItem from '@/components/card/ProductListItem.vue';
+	import SheetCategory from '@/views/sc/components/SheetCategory.vue';
+	import SheetBrands from '@/views/sc/components/SheetBrands.vue';
+	import SheetOrderBy from '@/views/sc/components/SheetOrderBy.vue';
+	import BottomSlideModal from '@/components/pop/BottomSlideModal.vue';
 	export default {
 		components: {
+			ProductListItem,
+			BottomSlideModal,
+			SheetCategory,
+			SheetBrands,
+			SheetOrderBy,
 			//DefaultRsltPage,
 		},
+		data() {
+			return {
+				showSlide: false,
+				slide_target_cd: 'A01',
+			};
+		},
 		methods: {
-			aa() {
-				alert('Wla');
-			},
-			bb() {
-				alert('bb');
+			slideOpen(slide_target_cd) {
+				this.slide_target_cd = slide_target_cd;
+				this.showSlide = true;
 			},
 		},
 	};
 </script>
 
-<style></style>
+<style scoped>
+	.v-bottom-sheet.v-dialog {
+		align-self: flex-end;
+		border-radius: 24px;
+		flex: 0 1 auto;
+		margin: 0;
+		overflow: visible;
+	}
+</style>

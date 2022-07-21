@@ -10,18 +10,18 @@
 				cols="6"
 				:class="{ 'px-1': true, 'px-5': $vuetify.breakpoint.sm }"
 			>
-				<ProductCard :product-item="productItem" @wish="wishDoit" />
+				<ProductCardItem :product-item="productItem" @wish="wishDoit" />
 			</v-col>
 		</v-row>
 	</v-container>
 </template>
 
 <script>
-	import ProductCard from '@/components/card/ProductCard.vue';
+	import ProductCardItem from '@/components/card/ProductCardItem.vue';
 	import ComputedMixin from '@/mixins/ComputedMixin.vue';
 	export default {
 		components: {
-			ProductCard,
+			ProductCardItem,
 		},
 		mixins: [ComputedMixin],
 		props: {

@@ -32,7 +32,7 @@
 				v-for="productItem in productList"
 				:key="productItem.product_cd"
 			>
-				<ProductCard :product-item="productItem" @wish="wishDoit" />
+				<ProductCardItem :product-item="productItem" @wish="wishDoit" />
 			</SwiperSlide>
 		</SlideBanner>
 		<!-- 인기상품 -->
@@ -51,7 +51,7 @@
 				v-for="productItem in productList"
 				:key="productItem.product_cd"
 			>
-				<ProductCard :product-item="productItem" @wish="wishDoit" />
+				<ProductCardItem :product-item="productItem" @wish="wishDoit" />
 			</SwiperSlide>
 		</SlideBanner>
 		<!-- 꿀콘 신상 -->
@@ -70,7 +70,7 @@
 				v-for="productItem in productList"
 				:key="productItem.product_cd"
 			>
-				<ProductCard :product-item="productItem" @wish="wishDoit" />
+				<ProductCardItem :product-item="productItem" @wish="wishDoit" />
 			</SwiperSlide>
 		</SlideBanner>
 		<!-- 인기 브랜드 -->
@@ -91,7 +91,7 @@
 				v-for="productItem in productList"
 				:key="productItem.product_cd"
 			>
-				<ProductCard :product-item="productItem" @wish="wishDoit" />
+				<ProductCardItem :product-item="productItem" @wish="wishDoit" />
 			</SwiperSlide> -->
 			<SwiperSlide v-for="i in 15" :key="i" style="height: 160px" class="ma-0">
 				<v-card
@@ -207,12 +207,12 @@
 
 	import BaseBanner from '@/views/ma/components/BaseBanner.vue';
 	import { SwiperSlide } from 'vue-awesome-swiper';
-	import ProductCard from '@/components/card/ProductCard.vue';
+	import ProductCardItem from '@/components/card/ProductCardItem.vue';
 	export default {
 		components: {
 			SlideBanner,
 			SelectBanner,
-			ProductCard,
+			ProductCardItem,
 			SwiperSlide,
 			BaseBanner,
 		},

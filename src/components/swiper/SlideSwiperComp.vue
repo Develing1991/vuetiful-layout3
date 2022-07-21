@@ -1,4 +1,5 @@
 <template>
+	<!-- 현재 이거 사용안함.. 일단 예시로 냅둠 -->
 	<swiper class="swiper" :options="swiperOption">
 		<!-- <swiper-slide>Slide 1</swiper-slide>
 		<swiper-slide>Slide 2</swiper-slide>
