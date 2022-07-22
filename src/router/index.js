@@ -51,7 +51,6 @@ const routes = [
 		component: createComponent(
 			() => import('@/layouts/header/SearchAppbar.vue'),
 			() => import('@/layouts/main/BaseView.vue'),
-			//() => import('@/layouts/footer/CateFooter.vue'),
 		),
 		children: [
 			{
@@ -63,6 +62,23 @@ const routes = [
 				path: 'search-rslt',
 				name: 'SrchRsltPage',
 				component: () => import('@/views/sc/SrchRsltPage.vue'),
+			},
+		],
+	},
+	{
+		path: '/au',
+		name: 'AuthIndex',
+		component: createComponent(
+			() => import('@/layouts/header/BackAppbar.vue'),
+			() => import('@/layouts/main/BaseView.vue'),
+			() => import('@/layouts/footer/BaseFooter.vue'),
+		),
+		children: [
+			{
+				path: 'sign-in',
+				name: 'SignInPage',
+				meta: { title: '로그인' },
+				component: () => import('@/views/au/si/SignInPage.vue'),
 			},
 		],
 	},

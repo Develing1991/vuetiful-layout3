@@ -3,7 +3,7 @@
 		<div @click="$emit('left')"><v-icon>mdi-arrow-left</v-icon></div>
 		<v-spacer />
 
-		<div>텍스트</div>
+		<div class="font-weight-bold">{{ $route.meta.title }}</div>
 		<v-spacer />
 	</v-app-bar>
 </template>
