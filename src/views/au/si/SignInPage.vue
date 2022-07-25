@@ -1,5 +1,5 @@
 <template>
-	<v-container>
+	<v-container class="mt-3">
 		<v-row>
 			<v-col cols="12">
 				<ValidationObserver ref="observer">
@@ -48,7 +48,7 @@
 							/>
 						</ValidationProvider>
 						<v-checkbox
-							v-model="checkEmailSave"
+							v-model="emailSave"
 							label="아이디 저장"
 							color="primary"
 							value="Y"
@@ -56,7 +56,7 @@
 							hide-details
 						/>
 						<v-checkbox
-							v-model="checkEmailSave"
+							v-model="autoLogin"
 							label="자동로그인"
 							color="primary"
 							value="Y"
@@ -103,6 +103,8 @@
 			member_id: '',
 			password: '',
 			showPass: true,
+			emailSave: false,
+			autoLogin: false,
 		}),
 		methods: {
 			submit() {
