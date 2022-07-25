@@ -79,7 +79,7 @@
 						color="primary"
 						outlined
 						class="mt-5 d-block"
-						@click="clear"
+						@click="$router.push({ name: 'TrmsAgrmForm' })"
 					>
 						<div class="text-subtitle-1 primary--text">회원가입</div></v-btn
 					>
