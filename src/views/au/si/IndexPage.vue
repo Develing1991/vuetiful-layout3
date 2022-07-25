@@ -1,5 +1,5 @@
 <template>
-	<v-container class="mt-4">
+	<v-container class="mt-4 px-5">
 		<v-row>
 			<v-col cols="12" class="py-0 text-center body-2 font-weight-bold">
 				<slot name="top"></slot>

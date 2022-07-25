@@ -92,6 +92,18 @@ const routes = [
 				meta: { title: '아이디 전체 보기' },
 				component: () => import('@/views/au/si/FindAcctAllForm.vue'),
 			},
+			{
+				path: 'find-pass',
+				name: 'FindPassForm',
+				meta: { title: '비밀번호 찾기' },
+				component: () => import('@/views/au/si/FindPassForm.vue'),
+			},
+			{
+				path: 'init-pass',
+				name: 'InitPassForm',
+				meta: { title: '비밀번호 재설정' },
+				component: () => import('@/views/au/si/InitPassForm.vue'),
+			},
 		],
 	},
 	{

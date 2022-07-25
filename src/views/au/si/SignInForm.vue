@@ -95,7 +95,12 @@
 					아이디 찾기
 				</div>
 				|
-				<div class="d-inline-block mx-1">비밀번호 찾기</div>
+				<div
+					class="d-inline-block mx-1"
+					@click="$router.push({ name: 'FindPassForm' })"
+				>
+					비밀번호 찾기
+				</div>
 			</div>
 		</template>
 	</IndexPage>
