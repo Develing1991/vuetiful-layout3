@@ -76,9 +76,21 @@ const routes = [
 		children: [
 			{
 				path: 'sign-in',
-				name: 'SignInPage',
+				name: 'SignInForm',
 				meta: { title: '로그인' },
-				component: () => import('@/views/au/si/SignInPage.vue'),
+				component: () => import('@/views/au/si/SignInForm.vue'),
+			},
+			{
+				path: 'find-acct-one',
+				name: 'FindAcctOneForm',
+				meta: { title: '아이디 찾기' },
+				component: () => import('@/views/au/si/FindAcctOneForm.vue'),
+			},
+			{
+				path: 'find-acct-all',
+				name: 'FindAcctAllForm',
+				meta: { title: '아이디 전체 보기' },
+				component: () => import('@/views/au/si/FindAcctAllForm.vue'),
 			},
 		],
 	},

@@ -6,7 +6,7 @@
 		<v-spacer />
 		<div @click="$emit('center')">꿀콘 로고</div>
 		<v-spacer />
-		<div @click="$router.push({ name: 'SignInPage' })">
+		<div @click="$router.push({ name: 'SignInForm' })">
 			<v-icon>mdi-account-outline</v-icon>
 		</div>
 		<template v-slot:extension app>
