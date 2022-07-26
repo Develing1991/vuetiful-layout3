@@ -113,12 +113,30 @@
 							</v-btn>
 						</v-col>
 						<v-col cols="6">
-							<v-btn color="primary" outlined tile elevation="0" width="100%">
+							<v-btn
+								color="primary"
+								outlined
+								tile
+								elevation="0"
+								width="100%"
+								@click="showDatePicker = true"
+							>
 								예약발송
 							</v-btn>
 						</v-col>
 					</v-row>
+
+					<v-row>
+						<v-col cols="12">
+							<v-list-item class="primary lighten-3 pa-0 body-2">
+								<v-list-item-content class="mx-2 caption">
+									2022-06-23 목요일
+								</v-list-item-content>
+							</v-list-item>
+						</v-col>
+					</v-row>
 				</v-container>
+				<DatePicker :show="showDatePicker" @pickerClose="setDate" />
 			</form>
 		</ValidationObserver>
 	</div>
@@ -126,10 +144,15 @@
 
 <script>
 	import VeeValidation from '@/mixins/VeeValidation.vue';
+	import DatePicker from '@/components/pop/DatePicker.vue';
 	export default {
+		components: {
+			DatePicker,
+		},
 		mixins: [VeeValidation],
 		data() {
 			return {
+				showDatePicker: false,
 				promotion: '',
 				byte_valid: false,
 				text_byte: 0,
@@ -169,6 +192,10 @@
 			clear() {
 				this.value = '';
 				this.$refs.observer.reset();
+			},
+			setDate(date) {
+				this.showDatePicker = false;
+				console.log(date);
 			},
 		},
 	};
