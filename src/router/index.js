@@ -156,6 +156,23 @@ const routes = [
 			},
 		],
 	},
+	{
+		path: '/od',
+		name: 'OrderIndex',
+		component: createComponent(
+			() => import('@/layouts/header/BackAppbar.vue'),
+			() => import('@/layouts/main/BaseView.vue'),
+			() => import('@/layouts/footer/BaseFooter.vue'),
+		),
+		children: [
+			{
+				path: 'ordr-prod',
+				name: 'OrdrProdPage',
+				meta: { title: '주문/결제' },
+				component: () => import('@/views/od/OrdrProdPage.vue'),
+			},
+		],
+	},
 	// {
 	// 	path: '/pd',
 	// 	name: 'Product',
