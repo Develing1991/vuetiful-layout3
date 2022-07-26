@@ -11,7 +11,7 @@
 								name="프로모션 명"
 								:rules="{
 									required: true,
-									check_bytedd: byte_valid && limit_byte,
+									check_byte: byte_valid && limit_byte,
 								}"
 							>
 								<v-text-field
@@ -48,7 +48,7 @@
 								name="메시지 제목"
 								:rules="{
 									required: true,
-									check_bytedd: byte_valid && limit_byte,
+									check_byte: byte_valid && limit_byte,
 								}"
 							>
 								<v-text-field
@@ -68,7 +68,7 @@
 								name="메시지 내용"
 								:rules="{
 									required: true,
-									check_bytedd: byte_valid && limit_byte,
+									check_byte: byte_valid && limit_byte,
 								}"
 							>
 								<v-textarea

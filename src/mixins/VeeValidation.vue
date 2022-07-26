@@ -148,7 +148,7 @@
 	});
 
 	//바이트 체크
-	extend('check_bytedd', {
+	extend('check_byte', {
 		validate: (value,values) => {
 			const limit_byte = values[0];
 			return `${limit_byte}byte를 초과할 수 없습니다.`;
