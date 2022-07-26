@@ -1,5 +1,11 @@
 <template>
-	<v-card class="pt-1" ripple elevation="0" outlined>
+	<v-card
+		class="pt-1"
+		ripple
+		elevation="0"
+		outlined
+		@click="$router.push({ name: 'ProdDtalPage' })"
+	>
 		<v-img
 			:src="productItem.image"
 			class="white--text align-end ma-2"

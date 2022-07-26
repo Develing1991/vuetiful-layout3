@@ -49,7 +49,7 @@ const routes = [
 		path: '/sc',
 		name: 'SearchIndex',
 		component: createComponent(
-			() => import('@/layouts/header/SearchAppbar.vue'),
+			() => import('@/layouts/header/SrchAppbar.vue'),
 			() => import('@/layouts/main/BaseView.vue'),
 		),
 		children: [
@@ -140,6 +140,60 @@ const routes = [
 			},
 		],
 	},
+	{
+		path: '/pd',
+		name: 'ProductIndex',
+		component: createComponent(
+			() => import('@/layouts/header/SrchAppbar.vue'),
+			() => import('@/layouts/main/BaseView.vue'),
+			() => import('@/layouts/footer/BaseFooter.vue'),
+		),
+		children: [
+			{
+				path: 'prod-dtal',
+				name: 'ProdDtalPage',
+				component: () => import('@/views/pd/ProdDtalPage.vue'),
+			},
+		],
+	},
+	// {
+	// 	path: '/pd',
+	// 	name: 'Product',
+	// 	children: [
+	// 		{
+	// 			path: 'prod-list-index',
+	// 			name: 'ProductListIndex',
+	// 			component: createComponent(
+	// 				() => import('@/layouts/header/MainAppbar.vue'),
+	// 				() => import('@/layouts/main/BaseView.vue'),
+	// 				() => import('@/layouts/footer/BaseFooter.vue'),
+	// 			),
+	// 			children: [
+	// 				{
+	// 					path: 'prod-list-page',
+	// 					name: 'ProdListPage',
+	// 					component: () => import('@/views/pd/ProdListPage.vue'),
+	// 				},
+	// 			],
+	// 		},
+	// 		{
+	// 			path: 'prod-dtal-index',
+	// 			name: 'ProductDtalIndex',
+	// 			component: createComponent(
+	// 				() => import('@/layouts/header/ProdAppbar.vue'),
+	// 				() => import('@/layouts/main/BaseView.vue'),
+	// 				//() => import('@/layouts/footer/BaseFooter.vue'),
+	// 			),
+	// 			children: [
+	// 				{
+	// 					path: 'prod-dtal-page',
+	// 					name: 'ProdDtalPage',
+	// 					component: () => import('@/views/pd/ProdDtalPage.vue'),
+	// 				},
+	// 			],
+	// 		},
+	// 	],
+	// },
 	{
 		path: '/about',
 		name: 'About',
