@@ -110,6 +110,18 @@ const routes = [
 				meta: { title: '약관동의' },
 				component: () => import('@/views/au/su/TrmsAgrmForm.vue'),
 			},
+			{
+				path: 'su/sign-up',
+				name: 'SignUpForm',
+				meta: { title: '회원정보입력' },
+				component: () => import('@/views/au/su/SignUpForm.vue'),
+			},
+			{
+				path: 'su/sign-up-rslt',
+				name: 'SignUpRsltPage',
+				meta: { title: '가입완료' },
+				component: () => import('@/views/au/su/SignUpRsltPage.vue'),
+			},
 		],
 	},
 	{
