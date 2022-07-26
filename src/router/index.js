@@ -125,6 +125,22 @@ const routes = [
 		],
 	},
 	{
+		path: '/pd',
+		name: 'ProductIndex',
+		component: createComponent(
+			() => import('@/layouts/header/MainAppbar.vue'),
+			() => import('@/layouts/main/BaseView.vue'),
+			() => import('@/layouts/footer/BaseFooter.vue'),
+		),
+		children: [
+			{
+				path: 'prod-list',
+				name: 'ProdListPage',
+				component: () => import('@/views/pd/ProdListPage.vue'),
+			},
+		],
+	},
+	{
 		path: '/about',
 		name: 'About',
 		// route level code-splitting

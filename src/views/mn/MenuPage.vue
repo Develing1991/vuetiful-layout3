@@ -82,7 +82,10 @@
 					<div v-for="brand in selectCateBrands" :key="brand.brand_cd" dense>
 						<v-list-item ripple>
 							<v-list-item-content>
-								<v-list-item-title>{{ brand.name }}</v-list-item-title>
+								<v-list-item-title
+									@click="$router.push({ name: 'ProdListPage' })"
+									>{{ brand.name }}</v-list-item-title
+								>
 								<!-- <v-list-item-subtitle>2022.00.00</v-list-item-subtitle> -->
 							</v-list-item-content>
 						</v-list-item>
