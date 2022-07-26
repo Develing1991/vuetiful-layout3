@@ -29,7 +29,7 @@
 					</v-col>
 					<v-col cols="3">
 						<span>
-							<v-icon> mdi-account-plus-outline</v-icon>
+							<v-icon> mdi-account-check-outline</v-icon>
 							<div>가입완료</div>
 						</span>
 					</v-col>
