@@ -156,7 +156,7 @@
 								/>
 							</ValidationProvider>
 						</v-col>
-						<v-col cols="11" class="pt-0">
+						<v-col cols="10" class="pt-0 pr-0">
 							<ValidationProvider
 								v-slot="{ errors }"
 								name="발신번호"
@@ -174,8 +174,8 @@
 								/>
 							</ValidationProvider>
 						</v-col>
-						<v-col cols="1" class="pt-0">
-							<div class="text-left">
+						<v-col cols="2" class="pt-0 pl-0">
+							<div class="text-right">
 								<v-menu
 									v-model="menu"
 									:close-on-content-click="false"
@@ -183,6 +183,7 @@
 									left
 								>
 									<template v-slot:activator="{ on, attrs }">
+										<!-- <div v-bind="attrs" v-on="on">ggd</div> -->
 										<v-btn
 											color="primary lighten-3"
 											small
