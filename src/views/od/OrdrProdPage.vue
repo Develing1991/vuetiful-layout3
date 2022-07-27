@@ -108,7 +108,13 @@
 					</v-row>
 					<v-row>
 						<v-col cols="6">
-							<v-btn class="primary" tile elevation="0" width="100%">
+							<v-btn
+								class="primary"
+								tile
+								elevation="0"
+								width="100%"
+								@click="setDate('now')"
+							>
 								즉시발송
 							</v-btn>
 						</v-col>
@@ -130,7 +136,7 @@
 						<v-col cols="12">
 							<v-list-item class="primary lighten-3 pa-0 body-2">
 								<v-list-item-content class="mx-2 caption">
-									2022-06-23 목요일
+									{{ reserveDate }}
 								</v-list-item-content>
 							</v-list-item>
 						</v-col>
@@ -145,6 +151,8 @@
 <script>
 	import VeeValidation from '@/mixins/VeeValidation.vue';
 	import DatePicker from '@/components/pop/DatePicker.vue';
+	import { format } from 'date-fns';
+	import { ko } from 'date-fns/locale';
 	export default {
 		components: {
 			DatePicker,
@@ -162,6 +170,7 @@
 				promotion_byte: 0,
 				msg_title_byte: 0,
 				msg_contents_byte: 0,
+				reserveDate: null,
 			};
 		},
 		methods: {
@@ -194,8 +203,20 @@
 				this.$refs.observer.reset();
 			},
 			setDate(date) {
-				this.showDatePicker = false;
-				console.log(date);
+				let settingsDate;
+				if (date === 'now') {
+					settingsDate = new Date();
+				} else {
+					this.showDatePicker = false;
+					const time = date.selectTime.split(':')[0];
+					const minutes = date.selectTime.split(':')[1];
+					settingsDate = new Date(date.selectDate);
+					settingsDate.setHours(time);
+					settingsDate.setMinutes(minutes);
+				}
+				this.reserveDate = format(settingsDate, 'yyyy-MM-dd HH:mm:ss EEEE', {
+					locale: ko,
+				});
 			},
 		},
 	};
