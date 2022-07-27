@@ -171,6 +171,12 @@ const routes = [
 				meta: { title: '주문/결제' },
 				component: () => import('@/views/od/OrdrProdPage.vue'),
 			},
+			{
+				path: 'ordr-prod-rslt',
+				name: 'OrdrProdRsltPage',
+				meta: { title: '주문완료' },
+				component: () => import('@/views/od/OrdrProdRsltPage.vue'),
+			},
 		],
 	},
 	// {

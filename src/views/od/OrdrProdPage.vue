@@ -30,14 +30,10 @@
 					</v-row>
 					<v-row>
 						<v-col cols="6">
-							<v-btn class="primary" tile elevation="0" width="100%">
-								추천 메시지 선택하기
-							</v-btn>
+							<v-btn class="primary" width="100%"> 추천 메시지 선택하기 </v-btn>
 						</v-col>
 						<v-col cols="6">
-							<v-btn class="primary" tile elevation="0" width="100%">
-								나의 메시지 불러오기
-							</v-btn>
+							<v-btn class="primary" width="100%"> 나의 메시지 불러오기 </v-btn>
 						</v-col>
 					</v-row>
 					<v-row>
@@ -97,9 +93,7 @@
 						</v-col>
 
 						<v-col cols="6" class="text-right">
-							<v-btn class="primary" tile elevation="0" width="80%" small>
-								미리보기
-							</v-btn>
+							<v-btn class="primary" width="80%" small> 미리보기 </v-btn>
 						</v-col>
 					</v-row>
 					<v-row>
@@ -109,13 +103,7 @@
 					</v-row>
 					<v-row>
 						<v-col cols="6">
-							<v-btn
-								class="primary"
-								tile
-								elevation="0"
-								width="100%"
-								@click="setDate('now')"
-							>
+							<v-btn class="primary" width="100%" @click="setDate('now')">
 								즉시발송
 							</v-btn>
 						</v-col>
@@ -123,8 +111,6 @@
 							<v-btn
 								color="primary"
 								outlined
-								tile
-								elevation="0"
 								width="100%"
 								@click="showDatePicker = true"
 							>
@@ -148,7 +134,7 @@
 							<div class="font-weight-bold body-2 my-2">발신 정보</div>
 						</v-col>
 						<v-col cols="6" class="text-right pb-0">
-							<v-btn class="primary" tile elevation="0" width="80%" small>
+							<v-btn class="primary" width="80%" small>
 								발신번호 불러오기
 							</v-btn>
 						</v-col>
@@ -307,14 +293,10 @@ ex)01022223333"
 					</v-row>
 					<v-row>
 						<v-col cols="6">
-							<v-btn color="primary" outlined tile elevation="0" width="100%">
-								초기화
-							</v-btn>
+							<v-btn color="primary" outlined width="100%"> 초기화 </v-btn>
 						</v-col>
 						<v-col cols="6">
-							<v-btn class="primary" tile elevation="0" width="100%">
-								번호검사
-							</v-btn>
+							<v-btn class="primary" width="100%"> 번호검사 </v-btn>
 						</v-col>
 						<v-col cols="12">
 							<div class="grey--text caption">
@@ -333,18 +315,12 @@ ex)01022223333"
 					</v-row>
 					<v-row>
 						<v-col cols="6">
-							<v-btn
-								class="primary"
-								tile
-								elevation="0"
-								width="100%"
-								@click="showSlide = true"
-							>
+							<v-btn class="primary" width="100%" @click="showSlide = true">
 								수신자 엑셀 업로드
 							</v-btn>
 						</v-col>
 						<v-col cols="6">
-							<v-btn color="primary" outlined tile elevation="0" width="100%">
+							<v-btn color="primary" outlined width="100%">
 								엑셀양식다운로드
 							</v-btn>
 						</v-col>
@@ -532,7 +508,13 @@ ex)01022223333"
 					</v-row>
 					<v-row>
 						<v-col cols="12">
-							<v-btn class="primary" width="100%">결제하기</v-btn>
+							<v-btn
+								class="primary"
+								large
+								width="100%"
+								@click="$router.push({ name: 'OrdrProdRsltPage' })"
+								>결제하기</v-btn
+							>
 						</v-col>
 					</v-row>
 				</v-container>

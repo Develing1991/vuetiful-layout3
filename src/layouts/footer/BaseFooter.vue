@@ -1,12 +1,12 @@
 <template>
 	<!-- <v-footer class="pa-0" :app="useApp"> 푸터입니당 </v-footer> -->
-	<v-footer padless app absolute>
+	<v-footer padless app absolute class="mt-12">
 		<v-card flat tile class="secondary lighten-5" width="100%">
 			<v-card-text class="black--text">
 				회원이용약관 | 개인정보처리방침
 			</v-card-text>
 
-			<v-card-text class="pt-0 black--text" style="font-size: 12px">
+			<v-card-text class="py-0 black--text" style="font-size: 12px">
 				<ul style="list-style: none; padding-left: 0px">
 					<li>회사명 : (주)한국이컴</li>
 					<li>대표이사 : 김정수</li>
@@ -21,7 +21,7 @@
 				</ul>
 			</v-card-text>
 
-			<v-card-text class="py-0 black--text">
+			<v-card-text class="black--text">
 				COPYRIGHT @ KECOM CORP. ALL RIGHTS RESERVED.
 			</v-card-text>
 		</v-card>
