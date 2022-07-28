@@ -198,7 +198,7 @@ const routes = [
 				path: 'cnfm-pass-page',
 				name: 'CnfmPassPage',
 				meta: { title: '개인정보수정' },
-				component: () => import('@/views/my/CnfmPassPage.vue'),
+				component: () => import('@/views/my/pv/CnfmPassPage.vue'),
 			},
 		],
 	},
