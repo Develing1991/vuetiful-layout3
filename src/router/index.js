@@ -200,6 +200,12 @@ const routes = [
 				meta: { title: '개인정보수정' },
 				component: () => import('@/views/my/pv/CnfmPassPage.vue'),
 			},
+			{
+				path: 'edit-myinfo-page',
+				name: 'EditMyInfoPage',
+				meta: { title: '개인정보수정' },
+				component: () => import('@/views/my/pv/EditMyInfoPage.vue'),
+			},
 		],
 	},
 	// {

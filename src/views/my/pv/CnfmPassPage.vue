@@ -42,7 +42,13 @@
 					</ValidationObserver>
 				</v-col>
 				<v-col cols="12">
-					<v-btn class="primary" width="100%"> 확인 </v-btn>
+					<v-btn
+						class="primary"
+						width="100%"
+						@click="$router.push({ name: 'EditMyInfoPage' })"
+					>
+						확인
+					</v-btn>
 				</v-col>
 			</v-row>
 		</v-container>
