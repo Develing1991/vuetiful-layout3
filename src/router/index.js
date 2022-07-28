@@ -179,6 +179,23 @@ const routes = [
 			},
 		],
 	},
+	{
+		path: '/my',
+		name: 'MyIndex',
+		component: createComponent(
+			() => import('@/layouts/header/BackAppbar.vue'),
+			() => import('@/layouts/main/BaseView.vue'),
+			() => import('@/layouts/footer/BaseFooter.vue'),
+		),
+		children: [
+			{
+				path: 'my-page',
+				name: 'MyPage',
+				meta: { title: '주문/결제' },
+				component: () => import('@/views/my/MyPage.vue'),
+			},
+		],
+	},
 	// {
 	// 	path: '/pd',
 	// 	name: 'Product',
