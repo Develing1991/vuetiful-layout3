@@ -191,8 +191,14 @@ const routes = [
 			{
 				path: 'my-page',
 				name: 'MyPage',
-				meta: { title: '주문/결제' },
+				meta: { title: '마이페이지' },
 				component: () => import('@/views/my/MyPage.vue'),
+			},
+			{
+				path: 'cnfm-pass-page',
+				name: 'CnfmPassPage',
+				meta: { title: '개인정보수정' },
+				component: () => import('@/views/my/CnfmPassPage.vue'),
 			},
 		],
 	},

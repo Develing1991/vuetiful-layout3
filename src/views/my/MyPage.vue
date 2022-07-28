@@ -2,7 +2,7 @@
 	<div>
 		<v-container class="px-0">
 			<v-list class="mb-2 py-0" dense>
-				<v-list-item ripple>
+				<v-list-item ripple @click="$router.push({ name: 'CnfmPassPage' })">
 					<v-list-item-content>
 						<v-list-item-title class="primary--text font-weight-bold"
 							>아이디</v-list-item-title
