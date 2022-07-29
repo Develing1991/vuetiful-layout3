@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import createComponent from '@/hoc/index.js';
-import createComponentView from '@/hoc/SubView.js';
+import createComponentView from '@/hoc/subView.js';
 
 Vue.use(VueRouter);
 const routes = [
