@@ -353,7 +353,6 @@
 		},
 		mixins: [VeeValidation],
 		data: () => ({
-			dialog: false,
 			termsNumber: 0,
 			member_id: '',
 			password: '',
@@ -361,6 +360,7 @@
 			emailSave: false,
 			svrcTrmsAll: null,
 			svrcTrmsCheckList: [null, null],
+			dialog: false,
 			trmsTitle: '',
 			trmsContents: '',
 		}),

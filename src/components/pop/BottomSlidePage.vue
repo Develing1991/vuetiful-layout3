@@ -41,9 +41,6 @@
 				default: '',
 			},
 		},
-		mounted() {
-			console.log(this.$vuetify);
-		},
 	};
 </script>
 

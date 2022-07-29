@@ -25,7 +25,14 @@
 							비밀번호
 						</v-col>
 						<v-col cols="1">
-							<v-btn color="primary" outlined width="100%" small>재설정</v-btn>
+							<v-btn
+								color="primary"
+								outlined
+								width="100%"
+								small
+								@click="openBottomModal('비밀번호 재설정', 'pass')"
+								>재설정</v-btn
+							>
 						</v-col>
 						<v-spacer />
 					</v-row>
@@ -157,7 +164,14 @@
 							</v-col>
 							<v-col cols="auto" align-self="center"> abcde@abcd.co.kr </v-col>
 							<v-col cols="1" class="px-0">
-								<v-btn color="primary" outlined width="100%" small>수정</v-btn>
+								<v-btn
+									color="primary"
+									outlined
+									width="100%"
+									small
+									@click="openBottomModal('이메일 수정', 'email')"
+									>수정</v-btn
+								>
 							</v-col>
 							<v-spacer />
 						</v-row>
@@ -278,24 +292,83 @@
 							회원탈퇴
 						</v-col>
 						<v-col cols="1">
-							<v-btn color="primary" outlined width="100%" small>탈퇴</v-btn>
+							<v-btn
+								color="primary"
+								outlined
+								width="100%"
+								small
+								@click="openBottomModal('회원탈퇴', 'withDrawl')"
+								>탈퇴</v-btn
+							>
 						</v-col>
 						<v-spacer />
 					</v-row>
 				</v-list-item>
 			</v-list>
 		</v-container>
+		<BottomSlidePage
+			v-if="dialog"
+			:dialog="dialog"
+			:title="trmsTitle"
+			@close="dialog = false"
+		>
+			<div>
+				<div v-show="openList['pass']">
+					<EditPassComp @close="dialog = false" />
+				</div>
+				<div v-show="openList['email']">
+					<EditEmailComp @close="dialog = false" />
+				</div>
+				<div v-show="openList['withDrawl']">
+					<WithDrawlComp @close="dialog = false" />
+				</div>
+			</div>
+		</BottomSlidePage>
 	</div>
 </template>
 
 <script>
 	import VeeValidation from '@/mixins/VeeValidation.vue';
+	import BottomSlidePage from '@/components/pop/BottomSlidePage.vue';
+	import EditPassComp from '@/views/my/pv/components/EditPassComp.vue';
+	import EditEmailComp from '@/views/my/pv/components/EditEmailComp.vue';
+	import WithDrawlComp from '@/views/my/pv/components/WithDrawlComp.vue';
 	export default {
+		components: {
+			BottomSlidePage,
+			EditPassComp,
+			EditEmailComp,
+			WithDrawlComp,
+		},
 		mixins: [VeeValidation],
 		data() {
 			return {
 				pass: null,
+				mng_name: null,
+				mng_phone: null,
+				mng_grade: null,
+				mng_tel: null,
+				dialog: false,
+				trmsTitle: '',
+				openList: {
+					pass: false,
+					email: false,
+					withDrawl: false,
+				},
 			};
+		},
+		methods: {
+			openBottomModal(title, subject) {
+				this.dialog = true;
+				this.trmsTitle = title;
+				this.initOpenList();
+				this.openList[subject] = true;
+			},
+			initOpenList() {
+				for (let key in this.openList) {
+					this.openList[key] = false;
+				}
+			},
 		},
 	};
 </script>
