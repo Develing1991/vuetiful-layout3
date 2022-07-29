@@ -6,6 +6,7 @@
 
 		<div class="font-weight-bold">{{ $route.meta.title }}</div>
 		<v-spacer />
+		<v-icon style="visibility: hidden">mdi-close</v-icon>
 	</v-app-bar>
 </template>
 

@@ -11,6 +11,8 @@
 			<!-- app-bar 중복이라 toolbar써야 됐는데 .. 늘어나길래 class="flex-grow-0" 클래스 추가했음 -->
 			<v-card tile max-width="720" :height="$vuetify.breakpoint.height">
 				<v-toolbar flat max-width="720" elevation="1" class="flex-grow-0">
+					<v-icon style="visibility: hidden">mdi-close</v-icon>
+					<v-spacer />
 					<div class="font-weight-bold">{{ title }}</div>
 					<v-spacer />
 					<!-- <v-toolbar-items>
