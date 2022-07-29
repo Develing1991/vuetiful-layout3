@@ -120,7 +120,12 @@
 							</v-list-item-content>
 
 							<v-list-item-action>
-								<v-btn tile outlined small class="pr-0" @click="dialog = true"
+								<v-btn
+									tile
+									outlined
+									small
+									class="pr-0"
+									@click="openTerms('서비스 이용 안내', '약관1')"
 									>내용보기
 									<v-icon> mdi-chevron-right </v-icon>
 								</v-btn>
@@ -159,7 +164,12 @@
 								</ValidationProvider>
 							</v-list-item-content>
 							<v-list-item-action>
-								<v-btn tile outlined small class="pr-0" @click="dialog = true"
+								<v-btn
+									tile
+									outlined
+									small
+									class="pr-0"
+									@click="openTerms('서비스 이용 안내', '약관1')"
 									>내용보기
 									<v-icon> mdi-chevron-right </v-icon>
 								</v-btn>
@@ -322,9 +332,11 @@
 			<BottomSlidePage
 				v-if="dialog"
 				:dialog="dialog"
-				:terms-number="termsNumber"
+				:title="trmsTitle"
 				@close="dialog = false"
-			/>
+			>
+				<div>{{ trmsContents }}</div>
+			</BottomSlidePage>
 		</template>
 		<template slot="bottom"> </template>
 	</IndexPage>
@@ -349,6 +361,8 @@
 			emailSave: false,
 			svrcTrmsAll: null,
 			svrcTrmsCheckList: [null, null],
+			trmsTitle: '',
+			trmsContents: '',
 		}),
 		methods: {
 			submit() {
@@ -385,6 +399,11 @@
 				) {
 					this.svrcTrmsAll = true;
 				}
+			},
+			openTerms(title, contents) {
+				this.dialog = true;
+				this.trmsTitle = title;
+				this.trmsContents = contents;
 			},
 		},
 	};

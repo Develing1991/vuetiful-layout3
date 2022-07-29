@@ -7,9 +7,11 @@
 			scrollable
 			fullscreen
 		>
+			<!-- <v-app-bar flat app max-width="720" class="mx-auto white" elevation="1"> -->
+			<!-- app-bar 중복이라 toolbar써야 됐는데 .. 늘어나길래 class="flex-grow-0" 클래스 추가했음 -->
 			<v-card tile max-width="720" :height="$vuetify.breakpoint.height">
-				<v-app-bar flat app max-width="720" class="mx-auto white" elevation="1">
-					<div class="font-weight-bold">서비스 이용 약관</div>
+				<v-toolbar flat max-width="720" elevation="1" class="flex-grow-0">
+					<div class="font-weight-bold">{{ title }}</div>
 					<v-spacer />
 					<!-- <v-toolbar-items>
 						<v-btn dark text @click="$emit('close')"> 동의 </v-btn>
@@ -17,7 +19,7 @@
 					<v-btn icon @click="$emit('close')">
 						<v-icon>mdi-close</v-icon>
 					</v-btn>
-				</v-app-bar>
+				</v-toolbar>
 
 				<v-card-text>
 					<slot></slot>
@@ -34,6 +36,13 @@
 				type: Boolean,
 				default: false,
 			},
+			title: {
+				type: String,
+				default: '',
+			},
+		},
+		mounted() {
+			console.log(this.$vuetify);
 		},
 	};
 </script>
