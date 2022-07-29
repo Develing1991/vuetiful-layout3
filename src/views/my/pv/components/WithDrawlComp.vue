@@ -158,7 +158,10 @@
 		},
 		methods: {
 			confirmYes() {
-				this.$refs.observer.validate();
+				// if (false) {
+				// 	this.$refs.observer.validate();
+				// }
+				this.$router.push({ name: 'WithdrwlRsltPage' });
 			},
 		},
 	};

@@ -208,6 +208,23 @@ const routes = [
 			},
 		],
 	},
+	{
+		path: '/my',
+		name: 'MyIndex',
+		component: createComponent(
+			() => import('@/layouts/header/MainAppbar.vue'),
+			() => import('@/layouts/main/BaseView.vue'),
+			() => import('@/layouts/footer/BaseFooter.vue'),
+		),
+		children: [
+			{
+				path: 'with-drwl-rslt-page',
+				name: 'WithdrwlRsltPage',
+				meta: { title: '개인정보수정' },
+				component: () => import('@/views/my/pv/WithdrwlRsltPage.vue'),
+			},
+		],
+	},
 	// {
 	// 	path: '/pd',
 	// 	name: 'Product',
