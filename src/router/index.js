@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import createComponent from '@/hoc/index.js';
+import createComponentView from '@/hoc/SubView.js';
 
 Vue.use(VueRouter);
 const routes = [
@@ -126,7 +127,7 @@ const routes = [
 	},
 	{
 		path: '/pd',
-		name: 'ProductIndex',
+		name: 'ProductIndexMainAppbar',
 		component: createComponent(
 			() => import('@/layouts/header/MainAppbar.vue'),
 			() => import('@/layouts/main/BaseView.vue'),
@@ -142,7 +143,7 @@ const routes = [
 	},
 	{
 		path: '/pd',
-		name: 'ProductIndex',
+		name: 'ProductIndexSrchAppbar',
 		component: createComponent(
 			() => import('@/layouts/header/SrchAppbar.vue'),
 			() => import('@/layouts/main/BaseView.vue'),
@@ -179,9 +180,10 @@ const routes = [
 			},
 		],
 	},
+	//OrdrListPage
 	{
 		path: '/my',
-		name: 'MyIndex',
+		name: 'MyIndexBackAppbar',
 		component: createComponent(
 			() => import('@/layouts/header/BackAppbar.vue'),
 			() => import('@/layouts/main/BaseView.vue'),
@@ -189,28 +191,48 @@ const routes = [
 		),
 		children: [
 			{
-				path: 'my-page',
-				name: 'MyPage',
-				meta: { title: '마이페이지' },
-				component: () => import('@/views/my/MyPage.vue'),
+				path: 'pv',
+				name: '',
+				component: createComponentView(),
+				children: [
+					{
+						path: 'my-page',
+						name: 'MyPage',
+						meta: { title: '마이페이지' },
+						component: () => import('@/views/my/MyPage.vue'),
+					},
+					{
+						path: 'cnfm-pass-page',
+						name: 'CnfmPassPage',
+						meta: { title: '개인정보수정' },
+						component: () => import('@/views/my/pv/CnfmPassPage.vue'),
+					},
+					{
+						path: 'edit-myinfo-page',
+						name: 'EditMyInfoPage',
+						meta: { title: '개인정보수정' },
+						component: () => import('@/views/my/pv/EditMyInfoPage.vue'),
+					},
+				],
 			},
 			{
-				path: 'cnfm-pass-page',
-				name: 'CnfmPassPage',
-				meta: { title: '개인정보수정' },
-				component: () => import('@/views/my/pv/CnfmPassPage.vue'),
-			},
-			{
-				path: 'edit-myinfo-page',
-				name: 'EditMyInfoPage',
-				meta: { title: '개인정보수정' },
-				component: () => import('@/views/my/pv/EditMyInfoPage.vue'),
+				path: 'od',
+				name: '',
+				component: createComponentView(),
+				children: [
+					{
+						path: 'ordr-list-page',
+						name: 'OrdrListPage',
+						meta: { title: '주문/발급내역' },
+						component: () => import('@/views/my/od/OrdrListPage.vue'),
+					},
+				],
 			},
 		],
 	},
 	{
 		path: '/my',
-		name: 'MyIndex',
+		name: 'MyIndexMainAppbar',
 		component: createComponent(
 			() => import('@/layouts/header/MainAppbar.vue'),
 			() => import('@/layouts/main/BaseView.vue'),

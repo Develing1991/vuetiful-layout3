@@ -180,10 +180,10 @@
 				</v-list-item>
 				<v-divider />
 
-				<v-list-item ripple>
+				<v-list-item ripple @click="$router.push({ name: 'OrdrListPage' })">
 					<v-list-item-content>
 						<v-list-item-title class="font-weight-bold"
-							>주문 / 발급 내역</v-list-item-title
+							>주문/발급 내역</v-list-item-title
 						>
 					</v-list-item-content>
 					<v-list-item-content>
@@ -196,7 +196,7 @@
 				<v-list-item ripple>
 					<v-list-item-content>
 						<v-list-item-title class="font-weight-bold"
-							>취소 / 환불 내역</v-list-item-title
+							>취소/환불 내역</v-list-item-title
 						>
 					</v-list-item-content>
 					<v-list-item-content>
@@ -259,7 +259,13 @@
 </template>
 
 <script>
-	export default {};
+	export default {
+		data() {
+			return {
+				menu: false,
+			};
+		},
+	};
 </script>
 
 <style></style>
