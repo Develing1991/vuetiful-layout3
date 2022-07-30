@@ -226,6 +226,12 @@ const routes = [
 						meta: { title: '주문/발급내역' },
 						component: () => import('@/views/my/od/OrdrListPage.vue'),
 					},
+					{
+						path: 'ordr-dtal-page',
+						name: 'OrdrDtalPage',
+						meta: { title: '주문/발급상세' },
+						component: () => import('@/views/my/od/OrdrDtalPage.vue'),
+					},
 				],
 			},
 		],
