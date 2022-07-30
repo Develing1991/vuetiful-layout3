@@ -112,7 +112,7 @@
 								color="primary"
 								outlined
 								width="100%"
-								@click="showDatePicker = true"
+								@click="showDateTimePicker = true"
 							>
 								예약발송
 							</v-btn>
@@ -521,7 +521,7 @@ ex)01022223333"
 				</v-container>
 			</form>
 		</ValidationObserver>
-		<DatePicker :show="showDatePicker" @pickerClose="setDate" />
+		<DateTimePicker :show="showDateTimePicker" @pickerClose="setDate" />
 		<BottomSlideModal :show-slide="showSlide" @close="showSlide = false">
 			<v-sheet>
 				<div class="px-6 py-3">
@@ -554,13 +554,13 @@ ex)01022223333"
 
 <script>
 	import VeeValidation from '@/mixins/VeeValidation.vue';
-	import DatePicker from '@/components/pop/DatePicker.vue';
+	import DateTimePicker from '@/components/pop/DateTimePicker.vue';
 	import { format } from 'date-fns';
 	import { ko } from 'date-fns/locale';
 	import BottomSlideModal from '@/components/pop/BottomSlideModal.vue';
 	export default {
 		components: {
-			DatePicker,
+			DateTimePicker,
 			BottomSlideModal,
 		},
 		mixins: [VeeValidation],
@@ -569,7 +569,7 @@ ex)01022223333"
 				menu: false,
 				showSlide: false,
 				//
-				showDatePicker: false,
+				showDateTimePicker: false,
 				promotion: '',
 				byte_valid: false,
 				text_byte: 0,
@@ -629,7 +629,7 @@ ex)01022223333"
 				if (date === 'now') {
 					settingsDate = new Date();
 				} else {
-					this.showDatePicker = false;
+					this.showDateTimePicker = false;
 					const time = date.selectTime.split(':')[0];
 					const minutes = date.selectTime.split(':')[1];
 					settingsDate = new Date(date.selectDate);
