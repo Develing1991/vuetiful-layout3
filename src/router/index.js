@@ -259,6 +259,19 @@ const routes = [
 					},
 				],
 			},
+			{
+				path: 'ws',
+				name: '',
+				component: createComponentView(),
+				children: [
+					{
+						path: 'wish-list-page',
+						name: 'WishListPage',
+						meta: { title: '찜목록' },
+						component: () => import('@/views/my/ws/WishListPage.vue'),
+					},
+				],
+			},
 		],
 	},
 	{

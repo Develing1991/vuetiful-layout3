@@ -33,7 +33,7 @@
 				<v-list-item-action class="my-auto">
 					<v-list-item-icon class="ma-auto" @click.stop="aa">
 						<v-icon :color="true ? 'red' : 'grey'">
-							{{ true ? 'mdi-heart' : 'mdi-heart-outline' }}
+							{{ true ? mdiIcon : mdiIconOutline }}
 						</v-icon>
 					</v-list-item-icon>
 				</v-list-item-action>
@@ -44,6 +44,16 @@
 </template>
 <script>
 	export default {
+		props: {
+			mdiIcon: {
+				type: String,
+				default: '',
+			},
+			mdiIconOutline: {
+				type: String,
+				default: '',
+			},
+		},
 		methods: {
 			aa() {
 				alert('Wla');

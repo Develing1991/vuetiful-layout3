@@ -206,7 +206,7 @@
 					</v-list-item-content>
 				</v-list-item>
 				<v-divider />
-				<v-list-item ripple>
+				<v-list-item ripple @click="$router.push({ name: 'WishListPage' })">
 					<v-list-item-content>
 						<v-list-item-title class="font-weight-bold"
 							>찜목록</v-list-item-title

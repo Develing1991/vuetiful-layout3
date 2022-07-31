@@ -43,7 +43,10 @@
 				</v-col>
 			</v-row>
 			<v-divider />
-			<ProductListItem />
+			<ProductListItem
+				mdi-icon="mdi-heart"
+				mdi-icon-outline="mdi-heart-outline"
+			/>
 			<BottomSlideModal :show-slide="showSlide">
 				<SheetCategory
 					v-show="slide_target_cd === 'A01'"
