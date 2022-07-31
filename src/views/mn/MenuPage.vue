@@ -19,7 +19,13 @@
 										</v-card>
 									</v-col>
 									<v-col cols="4" class="text-center">
-										<v-card class="pa-0 ma-0" ripple tile elevation="0">
+										<v-card
+											class="pa-0 ma-0"
+											ripple
+											tile
+											elevation="0"
+											@click="$router.push({ name: 'WishListPage' })"
+										>
 											<v-avatar
 												color="grey lighten-2"
 												class="mb-2"
@@ -30,7 +36,13 @@
 										</v-card>
 									</v-col>
 									<v-col cols="4" class="text-center">
-										<v-card class="pa-0 ma-0" ripple tile elevation="0">
+										<v-card
+											class="pa-0 ma-0"
+											ripple
+											tile
+											elevation="0"
+											@click="$router.push({ name: 'SendMsgMgmtPage' })"
+										>
 											<v-avatar
 												color="grey lighten-2"
 												class="mb-2"

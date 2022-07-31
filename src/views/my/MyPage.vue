@@ -219,7 +219,7 @@
 					</v-list-item-content>
 				</v-list-item>
 				<v-divider />
-				<v-list-item ripple>
+				<v-list-item ripple @click="$router.push({ name: 'SendMsgMgmtPage' })">
 					<v-list-item-content>
 						<v-list-item-title class="font-weight-bold"
 							>메시지관리</v-list-item-title
@@ -232,7 +232,7 @@
 					</v-list-item-content>
 				</v-list-item>
 				<v-divider />
-				<v-list-item ripple>
+				<v-list-item ripple @click="$router.push({ name: 'SendMbleMgmtPage' })">
 					<v-list-item-content>
 						<v-list-item-title class="font-weight-bold"
 							>발신번호관리</v-list-item-title

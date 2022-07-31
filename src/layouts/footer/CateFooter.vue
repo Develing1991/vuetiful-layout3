@@ -28,6 +28,7 @@
 											tile
 											elevation="0"
 											style="border: 1px solid #ddd"
+											@click="$router.push({ name: 'NotcPage' })"
 										>
 											공지사항</v-btn
 										>
@@ -39,6 +40,7 @@
 											tile
 											elevation="0"
 											style="border: 1px solid #ddd"
+											@click="$router.push({ name: 'InqrPage' })"
 										>
 											FAQ</v-btn
 										>

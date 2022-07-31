@@ -272,6 +272,51 @@ const routes = [
 					},
 				],
 			},
+			{
+				path: 'ms',
+				name: '',
+				component: createComponentView(),
+				children: [
+					{
+						path: 'send-msg-mgmt-page',
+						name: 'SendMsgMgmtPage',
+						meta: { title: '메시지 관리' },
+						component: () => import('@/views/my/ms/SendMsgMgmtPage.vue'),
+					},
+				],
+			},
+			{
+				path: 'sd',
+				name: '',
+				component: createComponentView(),
+				children: [
+					{
+						path: 'send-mble-Mgmt-page',
+						name: 'SendMbleMgmtPage',
+						meta: { title: '발신번호 관리' },
+						component: () => import('@/views/my/sd/SendMbleMgmtPage.vue'),
+					},
+				],
+			},
+			{
+				path: 'cs',
+				name: '',
+				component: createComponentView(),
+				children: [
+					{
+						path: 'notc-page',
+						name: 'NotcPage',
+						meta: { title: '공지사항' },
+						component: () => import('@/views/my/cs/NotcPage.vue'),
+					},
+					{
+						path: 'inqr-page',
+						name: 'InqrPage',
+						meta: { title: 'FAQ' },
+						component: () => import('@/views/my/cs/InqrPage.vue'),
+					},
+				],
+			},
 		],
 	},
 	{
