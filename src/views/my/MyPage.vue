@@ -193,7 +193,7 @@
 					</v-list-item-content>
 				</v-list-item>
 				<v-divider />
-				<v-list-item ripple>
+				<v-list-item ripple @click="$router.push({ name: 'CnclHistListPage' })">
 					<v-list-item-content>
 						<v-list-item-title class="font-weight-bold"
 							>취소/환불 내역</v-list-item-title

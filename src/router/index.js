@@ -240,6 +240,25 @@ const routes = [
 					},
 				],
 			},
+			{
+				path: 'cc',
+				name: '',
+				component: createComponentView(),
+				children: [
+					{
+						path: 'cncl-hist-list-page',
+						name: 'CnclHistListPage',
+						meta: { title: '취소/환불내역' },
+						component: () => import('@/views/my/cc/CnclHistListPage.vue'),
+					},
+					{
+						path: 'cncl-hist-dtal-page',
+						name: 'CnclHistDtalPage',
+						meta: { title: '취소/환불상세' },
+						component: () => import('@/views/my/cc/CnclHistDtalPage.vue'),
+					},
+				],
+			},
 		],
 	},
 	{
