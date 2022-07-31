@@ -2,13 +2,15 @@
 	<div>
 		<v-container class="px-0">
 			<v-list class="mb-2 py-0" dense>
-				<v-list-item ripple @click="$router.push({ name: 'CnfmPassPage' })">
-					<v-list-item-content>
+				<!-- <v-list-item ripple @click="$router.push({ name: 'CnfmPassPage' })"> -->
+				<!-- 임시로 일단 나눠놈  -->
+				<v-list-item ripple>
+					<v-list-item-content @click="$router.push({ name: 'SignInForm' })">
 						<v-list-item-title class="primary--text font-weight-bold"
 							>아이디</v-list-item-title
 						>
 					</v-list-item-content>
-					<v-list-item-content>
+					<v-list-item-content @click="$router.push({ name: 'CnfmPassPage' })">
 						<v-list-item-title class="text-right"
 							>개인정보수정
 							<v-icon class="pb-1">mdi-chevron-right</v-icon>
