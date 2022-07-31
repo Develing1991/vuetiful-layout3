@@ -232,6 +232,12 @@ const routes = [
 						meta: { title: '주문/발급상세' },
 						component: () => import('@/views/my/od/OrdrDtalPage.vue'),
 					},
+					{
+						path: 'ordr-cncl-page',
+						name: 'OrdrCnclPage',
+						meta: { title: '결제취소' },
+						component: () => import('@/views/my/od/OrdrCnclPage.vue'),
+					},
 				],
 			},
 		],

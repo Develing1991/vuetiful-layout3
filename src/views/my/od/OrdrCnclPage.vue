@@ -83,104 +83,21 @@
 			<v-row class="body-2">
 				<v-col cols="4" class="font-weight-bold py-1"> 프로모션 명 </v-col>
 				<v-col cols="8" class="py-1"> 프로모션명 노출 </v-col>
-				<v-col cols="4" class="font-weight-bold py-1"> 메시지 정보 </v-col>
-				<v-col cols="8" class="py-1"> 메시지 제목이 노출 </v-col>
-				<v-col cols="12 py-1 grey lighten-2">
-					<div class="py-2">메시지내용</div>
-				</v-col>
-				<v-col cols="4" class="font-weight-bold py-1"> 발신자 정보 </v-col>
-				<v-col cols="3" class="py-1"> 발신자명 </v-col>
-				<v-col cols="5" class="py-1"> 1544-0000</v-col>
+				<v-col cols="4" class="font-weight-bold py-1"> 쿠폰 발급 신청 </v-col>
+				<v-col cols="8" class="py-1"> 20건 </v-col>
+				<v-col cols="4" class="font-weight-bold py-1"> 발송(예약)일시 </v-col>
+				<v-col cols="8" class="py-1"> 2022-06-01 09:30 </v-col>
 			</v-row>
-			<v-row>
-				<v-col cols="6" class="px-0 pr-1">
-					<v-btn
-						outlined
-						width="100%"
-						@click="openBottomModal('미리보기', 'preView')"
-						>발송 형태 보기</v-btn
-					>
-				</v-col>
-				<v-col cols="6" class="px-0 pl-1">
-					<v-btn
-						outlined
-						width="100%"
-						@click="openBottomModal('수신자 목록', 'rcvrList')"
-						>수신자목록보기</v-btn
-					>
-				</v-col>
-			</v-row>
-			<v-row>
-				<v-col cols="12" class="font-weight-bold"> 쿠폰발급내역 </v-col>
-			</v-row>
-			<v-row
-				justify="space-around"
-				style="border-top: 1px solid #ddd"
-				class="caption text-center"
-			>
-				<v-col cols="2" class="px-0"> 전체 </v-col>
-				<v-col cols="2" class="px-0"> 준비 </v-col>
-				<v-col cols="2" class="px-0"> 처리중 </v-col>
 
-				<v-col cols="2" class="px-0"> 성공 </v-col>
-				<v-col cols="2" class="px-0"> 실패 </v-col>
-			</v-row>
-			<v-row
-				justify="space-around"
-				class="caption text-center"
-				style="border-top: 1px solid #ddd"
-			>
-				<v-col cols="2" class="px-0"> 20 </v-col>
-				<v-col cols="2" class="px-0"> 0 </v-col>
-				<v-col cols="2" class="px-0"> 0 </v-col>
-
-				<v-col cols="2" class="px-0"> 18</v-col>
-				<v-col cols="2" class="px-0"> 2 </v-col>
-			</v-row>
-			<v-row style="border-top: 1px solid #ddd">
+			<v-row>
 				<v-col cols="12" />
 			</v-row>
-			<v-row>
-				<v-col cols="12" class="text-center body-2">
-					발송(예약)일시 : 2022-06-01 09:30
-					<v-btn
-						class="ml-2"
-						outlined
-						small
-						@click="$router.push({ name: 'OrdrCnclPage' })"
-						>결제취소</v-btn
-					>
-				</v-col>
-			</v-row>
-			<v-row>
-				<v-col cols="6" class="px-0 pr-1">
-					<v-btn
-						color="primary"
-						width="100%"
-						@click="openBottomModal('쿠폰 재발송', 'coupReSend')"
-						>쿠폰 재발송</v-btn
-					>
-				</v-col>
-				<v-col cols="6" class="px-0 pl-1">
-					<v-btn color="primary" outlined width="100%"
-						>발급 내역 다운로드</v-btn
-					>
-				</v-col>
-				<v-col cols="12" class="text-center caption blue--text">
-					*재발송 : 성공 건 중 유효기간이 남아있거나 사용 전인 경우만 3회까지
-					재발송 할 수 있습니다.
-				</v-col>
+			<v-row style="border-top: 1px solid #ddd" class="caption">
+				<v-col cols="12" class="font-weight-bold py-2"> 결제취소정보 </v-col>
 			</v-row>
 			<v-row style="border-top: 1px solid #ddd" class="caption">
-				<v-col cols="12" class="font-weight-bold py-2"> 결제정보 </v-col>
-			</v-row>
-			<v-row style="border-top: 1px solid #ddd" class="caption">
-				<v-col cols="6" class="text-left py-2"> 결제 수단 </v-col>
+				<v-col cols="6" class="text-left py-2"> 결제취소수단 </v-col>
 				<v-col cols="6" class="text-right py-2"> 롯데카드 </v-col>
-			</v-row>
-			<v-row style="border-top: 1px solid #ddd" class="caption">
-				<v-col cols="6" class="text-left py-2"> 결제 일시 </v-col>
-				<v-col cols="6" class="text-right py-2"> 2022-05-23 13:59 </v-col>
 			</v-row>
 			<v-row style="border-top: 1px solid #ddd" class="caption">
 				<v-col cols="6" class="text-left py-2"> 상품 가격 </v-col>
@@ -191,45 +108,33 @@
 				<v-col cols="6" class="text-right py-2"> 3,375원 </v-col>
 			</v-row>
 			<v-row style="border-top: 1px solid #ddd" class="caption">
-				<v-col cols="6" class="text-left py-2"> 발송 수량 </v-col>
-				<v-col cols="6" class="text-right py-2"> 20 </v-col>
+				<v-col cols="6" class="text-left py-2"> 취소 수량 </v-col>
+				<v-col cols="6" class="text-right py-2"> 2 </v-col>
 			</v-row>
-			<template v-if="ishwanbul">
-				<v-row style="border-top: 1px solid #ddd" class="caption">
-					<v-col cols="6" class="text-left py-2"> 결제 금액 </v-col>
-					<v-col cols="6" class="text-right py-2"> 0,000,000원 </v-col>
-				</v-row>
-				<v-row style="border-top: 1px solid #ddd" class="caption">
-					<v-col cols="6" class="text-left py-2"> 환불 수량 </v-col>
-					<v-col cols="6" class="text-right py-2"> -2 </v-col>
-				</v-row>
-				<v-row style="border-top: 1px solid #ddd" class="caption">
-					<v-col cols="6" class="text-left py-2"> 환불 금액 </v-col>
-					<v-col cols="6" class="text-right py-2"> 0,000,000원 </v-col>
-				</v-row>
-			</template>
+
 			<v-row
 				style="border-top: 1px solid #ddd"
 				class="caption font-weight-bold"
 			>
-				<v-col cols="6" class="text-left py-2"> 최종 결제 금액 </v-col>
+				<v-col cols="6" class="text-left py-2"> 취소 예정 금액 </v-col>
 				<v-col cols="6" class="text-right py-2 red--text"> 0,000,000원 </v-col>
 			</v-row>
 			<v-row style="border-top: 1px solid #ddd">
 				<v-col cols="12" class="pb-0" />
 			</v-row>
+			<v-row>
+				<v-col cols="12" class="text-center caption">
+					취소/환불 내역은 마이페이지 > 취소/환불 내역에서 확인할 수 있습니다.
+				</v-col>
+			</v-row>
 			<v-row class="mb-1">
 				<v-col cols="6" class="px-0 pr-1">
-					<v-btn color="primary" width="100%">영수증</v-btn>
+					<v-btn color="primary" outlined width="100%" @click="$router.go(-1)"
+						>주문상세보기</v-btn
+					>
 				</v-col>
 				<v-col cols="6" class="px-0 pl-1">
-					<v-btn
-						color="primary"
-						outlined
-						width="100%"
-						@click="openBottomModal('전자거래명세서 발송', 'trdeSpec')"
-						>거래명세서</v-btn
-					>
+					<v-btn color="primary" width="100%">결제취소하기</v-btn>
 				</v-col>
 			</v-row>
 		</v-container>
@@ -246,14 +151,8 @@
 				</div>
 			</div>
 
-			<div v-show="openList['rcvrList']">
+			<div v-show="openList['recvrList']">
 				<RcvrMbleList />
-			</div>
-			<div v-show="openList['coupReSend']">
-				<CoupReSend />
-			</div>
-			<div v-show="openList['trdeSpec']">
-				<TrdeSpec />
 			</div>
 		</BottomSlidePage>
 	</div>
@@ -262,15 +161,11 @@
 <script>
 	import BottomSlidePage from '@/components/pop/BottomSlidePage.vue';
 	import RcvrMbleList from '@/views/my/od/components/RcvrMbleList';
-	import CoupReSend from '@/views/my/od/components/CoupReSend';
-	import TrdeSpec from '@/views/my/od/components/TrdeSpec';
 
 	export default {
 		components: {
 			BottomSlidePage,
 			RcvrMbleList,
-			CoupReSend,
-			TrdeSpec,
 		},
 		data() {
 			return {
@@ -279,8 +174,6 @@
 				openList: {
 					preView: false,
 					recvrList: false,
-					coupReSend: false,
-					trdeSpec: false,
 				},
 				ishwanbul: true,
 			};
