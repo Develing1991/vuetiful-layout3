@@ -94,18 +94,182 @@
 			</v-row>
 			<v-row>
 				<v-col cols="6" class="px-0 pr-1">
-					<v-btn outlined width="100%">발송 형태 보기</v-btn>
+					<v-btn
+						outlined
+						width="100%"
+						@click="openBottomModal('미리보기', 'preView')"
+						>발송 형태 보기</v-btn
+					>
 				</v-col>
 				<v-col cols="6" class="px-0 pl-1">
-					<v-btn outlined width="100%">수신자목록보기</v-btn>
+					<v-btn
+						outlined
+						width="100%"
+						@click="openBottomModal('수신자 목록', 'recvrList')"
+						>수신자목록보기</v-btn
+					>
+				</v-col>
+			</v-row>
+			<v-row>
+				<v-col cols="12" class="font-weight-bold"> 쿠폰발급내역 </v-col>
+			</v-row>
+			<v-row
+				justify="space-around"
+				style="border-top: 1px solid #ddd"
+				class="caption text-center"
+			>
+				<v-col cols="2" class="px-0"> 전체 </v-col>
+				<v-col cols="2" class="px-0"> 준비 </v-col>
+				<v-col cols="2" class="px-0"> 처리중 </v-col>
+
+				<v-col cols="2" class="px-0"> 성공 </v-col>
+				<v-col cols="2" class="px-0"> 실패 </v-col>
+			</v-row>
+			<v-row
+				justify="space-around"
+				class="caption text-center"
+				style="border-top: 1px solid #ddd"
+			>
+				<v-col cols="2" class="px-0"> 20 </v-col>
+				<v-col cols="2" class="px-0"> 0 </v-col>
+				<v-col cols="2" class="px-0"> 0 </v-col>
+
+				<v-col cols="2" class="px-0"> 18</v-col>
+				<v-col cols="2" class="px-0"> 2 </v-col>
+			</v-row>
+			<v-row style="border-top: 1px solid #ddd">
+				<v-col cols="12" />
+			</v-row>
+			<v-row>
+				<v-col cols="12" class="text-center body-2">
+					발송(예약)일시 : 2022-06-01 09:30
+					<v-btn class="ml-2" outlined small>결제취소</v-btn>
+				</v-col>
+			</v-row>
+			<v-row>
+				<v-col cols="6" class="px-0 pr-1">
+					<v-btn color="primary" width="100%">쿠폰 재발송</v-btn>
+				</v-col>
+				<v-col cols="6" class="px-0 pl-1">
+					<v-btn color="primary" outlined width="100%"
+						>발급 내역 다운로드</v-btn
+					>
+				</v-col>
+				<v-col cols="12" class="text-center caption blue--text">
+					*재발송 : 성공 건 중 유효기간이 남아있거나 사용 전인 경우만 3회까지
+					재발송 할 수 있습니다.
+				</v-col>
+			</v-row>
+			<v-row style="border-top: 1px solid #ddd" class="caption">
+				<v-col cols="12" class="font-weight-bold py-2"> 결제정보 </v-col>
+			</v-row>
+			<v-row style="border-top: 1px solid #ddd" class="caption">
+				<v-col cols="6" class="text-left py-2"> 결제 수단 </v-col>
+				<v-col cols="6" class="text-right py-2"> 롯데카드 </v-col>
+			</v-row>
+			<v-row style="border-top: 1px solid #ddd" class="caption">
+				<v-col cols="6" class="text-left py-2"> 결제 일시 </v-col>
+				<v-col cols="6" class="text-right py-2"> 2022-05-23 13:59 </v-col>
+			</v-row>
+			<v-row style="border-top: 1px solid #ddd" class="caption">
+				<v-col cols="6" class="text-left py-2"> 상품 가격 </v-col>
+				<v-col cols="6" class="text-right py-2"> 4,000원 </v-col>
+			</v-row>
+			<v-row style="border-top: 1px solid #ddd" class="caption">
+				<v-col cols="6" class="text-left py-2"> 할인 가격 </v-col>
+				<v-col cols="6" class="text-right py-2"> 3,375원 </v-col>
+			</v-row>
+			<v-row style="border-top: 1px solid #ddd" class="caption">
+				<v-col cols="6" class="text-left py-2"> 발송 수량 </v-col>
+				<v-col cols="6" class="text-right py-2"> 20 </v-col>
+			</v-row>
+			<template v-if="ishwanbul">
+				<v-row style="border-top: 1px solid #ddd" class="caption">
+					<v-col cols="6" class="text-left py-2"> 결제 금액 </v-col>
+					<v-col cols="6" class="text-right py-2"> 0,000,000원 </v-col>
+				</v-row>
+				<v-row style="border-top: 1px solid #ddd" class="caption">
+					<v-col cols="6" class="text-left py-2"> 환불 수량 </v-col>
+					<v-col cols="6" class="text-right py-2"> -2 </v-col>
+				</v-row>
+				<v-row style="border-top: 1px solid #ddd" class="caption">
+					<v-col cols="6" class="text-left py-2"> 환불 금액 </v-col>
+					<v-col cols="6" class="text-right py-2"> 0,000,000원 </v-col>
+				</v-row>
+			</template>
+			<v-row
+				style="border-top: 1px solid #ddd"
+				class="caption font-weight-bold"
+			>
+				<v-col cols="6" class="text-left py-2"> 최종 결제 금액 </v-col>
+				<v-col cols="6" class="text-right py-2 red--text"> 0,000,000원 </v-col>
+			</v-row>
+			<v-row style="border-top: 1px solid #ddd">
+				<v-col cols="12" class="pb-0" />
+			</v-row>
+			<v-row class="mb-1">
+				<v-col cols="6" class="px-0 pr-1">
+					<v-btn color="primary" width="100%">영수증</v-btn>
+				</v-col>
+				<v-col cols="6" class="px-0 pl-1">
+					<v-btn color="primary" outlined width="100%">거래명세서</v-btn>
 				</v-col>
 			</v-row>
 		</v-container>
+
+		<BottomSlidePage
+			:dialog="dialog"
+			:title="trmsTitle"
+			@close="dialog = false"
+		>
+			<div v-show="openList['preView']">
+				<div class="text-center py-4">
+					<img alt="Vue logo" src="~@/assets/images/preView.jpg" />
+					<div><v-btn outlined @click="dialog = false">닫기</v-btn></div>
+				</div>
+			</div>
+
+			<div v-show="openList['recvrList']">
+				<RcvrMbleList />
+			</div>
+		</BottomSlidePage>
 	</div>
 </template>
 
 <script>
-	export default {};
+	import BottomSlidePage from '@/components/pop/BottomSlidePage.vue';
+	import RcvrMbleList from '@/views/my/od/components/RcvrMbleList';
+
+	export default {
+		components: {
+			BottomSlidePage,
+			RcvrMbleList,
+		},
+		data() {
+			return {
+				dialog: false,
+				trmsTitle: '',
+				openList: {
+					preView: false,
+					recvrList: false,
+				},
+				ishwanbul: true,
+			};
+		},
+		methods: {
+			openBottomModal(title, subject) {
+				this.dialog = true;
+				this.trmsTitle = title;
+				this.initOpenList();
+				this.openList[subject] = true;
+			},
+			initOpenList() {
+				for (let key in this.openList) {
+					this.openList[key] = false;
+				}
+			},
+		},
+	};
 </script>
 
 <style></style>
