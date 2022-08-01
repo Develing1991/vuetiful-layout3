@@ -19,7 +19,7 @@
 						<v-btn dark text @click="$emit('close')"> 동의 </v-btn>
 					</v-toolbar-items> -->
 					<v-btn icon @click="$emit('close')">
-						<v-icon>mdi-close</v-icon>
+						<v-icon size="30">mdi-close</v-icon>
 					</v-btn>
 				</v-toolbar>
 

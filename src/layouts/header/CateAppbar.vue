@@ -27,7 +27,7 @@
 		<v-spacer />
 
 		<div @click="$router.go(-1)">
-			<v-icon>mdi-close</v-icon>
+			<v-icon size="30">mdi-close</v-icon>
 		</div>
 	</v-app-bar>
 </template>

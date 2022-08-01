@@ -180,7 +180,6 @@ const routes = [
 			},
 		],
 	},
-	//OrdrListPage
 	{
 		path: '/my',
 		name: 'MyIndexBackAppbar',
@@ -389,6 +388,25 @@ const router = new VueRouter({
 	mode: 'history',
 	base: process.env.BASE_URL,
 	routes,
+});
+
+//글로벌 비포 가드
+router.beforeEach((to, from, next) => {
+	//https://v3.router.vuejs.org/guide/advanced/meta.html (vue-router 공식문서 참조)
+	// if (to.matched.some(record => record.meta.auth)) {
+	// 	//auth가 true이면
+	// 	if (!store.getters.isLogin) {
+	// 		next({ path: '/login', query: { redirect: to.fullPath } });
+	// 	}
+	// } else {
+	// 	next();
+	// }
+	next();
+	//라우터 이동 후 스크롤 위치 탑으로 초기화
+	window.scrollTo(0, 0);
+
+	console.log(to);
+	console.log(from);
 });
 
 export default router;

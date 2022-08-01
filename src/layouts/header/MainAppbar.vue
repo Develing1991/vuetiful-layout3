@@ -1,14 +1,14 @@
 <template>
 	<v-app-bar app color="white elevation-1">
 		<div @click="$router.push({ name: 'MenuPage' })">
-			<v-icon>mdi-menu</v-icon>
+			<v-icon size="30">mdi-menu</v-icon>
 		</div>
 		<v-spacer />
 		<div @click="$emit('center')">꿀콘 로고</div>
 		<v-spacer />
 		<!-- <div @click="$router.push({ name: 'SignInForm' })"> -->
 		<div @click="$router.push({ name: 'MyPage' })">
-			<v-icon>mdi-account-outline</v-icon>
+			<v-icon size="30">mdi-account-outline</v-icon>
 		</div>
 		<template v-slot:extension app>
 			<v-text-field

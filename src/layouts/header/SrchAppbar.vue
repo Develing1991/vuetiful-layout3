@@ -1,6 +1,6 @@
 <template>
 	<v-app-bar app color="white elevation-1">
-		<v-icon @click="$router.go(-1)">mdi-arrow-left</v-icon>
+		<v-icon size="30" @click="$router.go(-1)">mdi-arrow-left</v-icon>
 
 		<v-text-field
 			placeholder="프로모션 텍스트 노출"
@@ -9,12 +9,16 @@
 			dense
 			outlined
 			append-icon="mdi-magnify"
-			@click:append="$router.push({ name: 'SrchRsltPage' })"
+			@click:append="searchWord"
 		/>
 
 		<template v-if="isProductPage">
-			<v-icon>mdi-home-outline</v-icon>
-			<v-icon>mdi-account-outline</v-icon>
+			<v-icon size="30" @click="$router.push({ name: 'MainPage' })"
+				>mdi-home-outline</v-icon
+			>
+			<v-icon size="30" @click="$router.push({ name: 'MyPage' })"
+				>mdi-account-outline</v-icon
+			>
 		</template>
 
 		<!-- <v-spacer />
@@ -31,12 +35,16 @@
 				return this.$route.fullPath.startsWith('/pd');
 			},
 		},
-		mounted() {
-			console.log(this.$route.fullPath);
-		},
+		mounted() {},
 		methods: {
-			aaa() {
-				alert('검색!');
+			searchWord() {
+				if (this.$route.name !== 'SrchRsltPage') {
+					this.$router.push({ name: 'SrchRsltPage' });
+					console.log('SrchRsltPage에서 검색실행하기');
+				} else {
+					console.log('검색 fetch 실행');
+				}
+				//
 			},
 		},
 	};
