@@ -26,6 +26,7 @@ const routes = [
 			{
 				path: 'main',
 				name: 'MainPage',
+				meta: { auth: false },
 				component: () => import('@/views/ma/MainPage.vue'),
 			},
 		],
@@ -42,6 +43,7 @@ const routes = [
 			{
 				path: 'menu',
 				name: 'MenuPage',
+				meta: { auth: false },
 				component: () => import('@/views/mn/MenuPage.vue'),
 			},
 		],
@@ -57,11 +59,13 @@ const routes = [
 			{
 				path: 'search',
 				name: 'SrchWordPage',
+				meta: { auth: false },
 				component: () => import('@/views/sc/SrchWordPage.vue'),
 			},
 			{
 				path: 'search-rslt',
 				name: 'SrchRsltPage',
+				meta: { auth: false },
 				component: () => import('@/views/sc/SrchRsltPage.vue'),
 			},
 		],
@@ -78,49 +82,49 @@ const routes = [
 			{
 				path: 'si/sign-in',
 				name: 'SignInForm',
-				meta: { title: '로그인' },
+				meta: { title: '로그인', auth: false },
 				component: () => import('@/views/au/si/SignInForm.vue'),
 			},
 			{
 				path: 'si/find-acct-one',
 				name: 'FindAcctOneForm',
-				meta: { title: '아이디 찾기' },
+				meta: { title: '아이디 찾기', auth: false },
 				component: () => import('@/views/au/si/FindAcctOneForm.vue'),
 			},
 			{
 				path: 'si/find-acct-all',
 				name: 'FindAcctAllForm',
-				meta: { title: '아이디 전체 보기' },
+				meta: { title: '아이디 전체 보기', auth: false },
 				component: () => import('@/views/au/si/FindAcctAllForm.vue'),
 			},
 			{
 				path: 'si/find-pass',
 				name: 'FindPassForm',
-				meta: { title: '비밀번호 찾기' },
+				meta: { title: '비밀번호 찾기', auth: false },
 				component: () => import('@/views/au/si/FindPassForm.vue'),
 			},
 			{
 				path: 'si/init-pass',
 				name: 'InitPassForm',
-				meta: { title: '비밀번호 재설정' },
+				meta: { title: '비밀번호 재설정', auth: false },
 				component: () => import('@/views/au/si/InitPassForm.vue'),
 			},
 			{
 				path: 'su/trms-agrm',
 				name: 'TrmsAgrmForm',
-				meta: { title: '약관동의' },
+				meta: { title: '약관동의', auth: false },
 				component: () => import('@/views/au/su/TrmsAgrmForm.vue'),
 			},
 			{
 				path: 'su/sign-up',
 				name: 'SignUpForm',
-				meta: { title: '회원정보입력' },
+				meta: { title: '회원정보입력', auth: false },
 				component: () => import('@/views/au/su/SignUpForm.vue'),
 			},
 			{
 				path: 'su/sign-up-rslt',
 				name: 'SignUpRsltPage',
-				meta: { title: '가입완료' },
+				meta: { title: '가입완료', auth: false },
 				component: () => import('@/views/au/su/SignUpRsltPage.vue'),
 			},
 		],
@@ -137,6 +141,7 @@ const routes = [
 			{
 				path: 'prod-list',
 				name: 'ProdListPage',
+				meta: { auth: false },
 				component: () => import('@/views/pd/ProdListPage.vue'),
 			},
 		],
@@ -153,6 +158,7 @@ const routes = [
 			{
 				path: 'prod-dtal',
 				name: 'ProdDtalPage',
+				meta: { auth: false },
 				component: () => import('@/views/pd/ProdDtalPage.vue'),
 			},
 		],
@@ -169,13 +175,13 @@ const routes = [
 			{
 				path: 'ordr-prod',
 				name: 'OrdrProdPage',
-				meta: { title: '주문/결제' },
+				meta: { title: '주문/결제', auth: true },
 				component: () => import('@/views/od/OrdrProdPage.vue'),
 			},
 			{
 				path: 'ordr-prod-rslt',
 				name: 'OrdrProdRsltPage',
-				meta: { title: '주문완료' },
+				meta: { title: '주문완료', auth: true },
 				component: () => import('@/views/od/OrdrProdRsltPage.vue'),
 			},
 		],
@@ -197,19 +203,19 @@ const routes = [
 					{
 						path: 'my-page',
 						name: 'MyPage',
-						meta: { title: '마이페이지' },
+						meta: { title: '마이페이지', auth: true },
 						component: () => import('@/views/my/MyPage.vue'),
 					},
 					{
 						path: 'cnfm-pass-page',
 						name: 'CnfmPassPage',
-						meta: { title: '개인정보수정' },
+						meta: { title: '비밀번호 입력', auth: true },
 						component: () => import('@/views/my/pv/CnfmPassPage.vue'),
 					},
 					{
 						path: 'edit-myinfo-page',
 						name: 'EditMyInfoPage',
-						meta: { title: '개인정보수정' },
+						meta: { title: '개인정보 수정', auth: true },
 						component: () => import('@/views/my/pv/EditMyInfoPage.vue'),
 					},
 				],
@@ -222,19 +228,19 @@ const routes = [
 					{
 						path: 'ordr-list-page',
 						name: 'OrdrListPage',
-						meta: { title: '주문/발급내역' },
+						meta: { title: '주문/발급내역', auth: true },
 						component: () => import('@/views/my/od/OrdrListPage.vue'),
 					},
 					{
 						path: 'ordr-dtal-page',
 						name: 'OrdrDtalPage',
-						meta: { title: '주문/발급상세' },
+						meta: { title: '주문/발급상세', auth: true },
 						component: () => import('@/views/my/od/OrdrDtalPage.vue'),
 					},
 					{
 						path: 'ordr-cncl-page',
 						name: 'OrdrCnclPage',
-						meta: { title: '결제취소' },
+						meta: { title: '결제취소', auth: true },
 						component: () => import('@/views/my/od/OrdrCnclPage.vue'),
 					},
 				],
@@ -247,13 +253,13 @@ const routes = [
 					{
 						path: 'cncl-hist-list-page',
 						name: 'CnclHistListPage',
-						meta: { title: '취소/환불내역' },
+						meta: { title: '취소/환불내역', auth: true },
 						component: () => import('@/views/my/cc/CnclHistListPage.vue'),
 					},
 					{
 						path: 'cncl-hist-dtal-page',
 						name: 'CnclHistDtalPage',
-						meta: { title: '취소/환불상세' },
+						meta: { title: '취소/환불상세', auth: true },
 						component: () => import('@/views/my/cc/CnclHistDtalPage.vue'),
 					},
 				],
@@ -266,7 +272,7 @@ const routes = [
 					{
 						path: 'wish-list-page',
 						name: 'WishListPage',
-						meta: { title: '찜목록' },
+						meta: { title: '찜목록', auth: true },
 						component: () => import('@/views/my/ws/WishListPage.vue'),
 					},
 				],
@@ -279,7 +285,7 @@ const routes = [
 					{
 						path: 'send-msg-mgmt-page',
 						name: 'SendMsgMgmtPage',
-						meta: { title: '메시지 관리' },
+						meta: { title: '메시지 관리', auth: true },
 						component: () => import('@/views/my/ms/SendMsgMgmtPage.vue'),
 					},
 				],
@@ -292,7 +298,7 @@ const routes = [
 					{
 						path: 'send-mble-Mgmt-page',
 						name: 'SendMbleMgmtPage',
-						meta: { title: '발신번호 관리' },
+						meta: { title: '발신번호 관리', auth: true },
 						component: () => import('@/views/my/sd/SendMbleMgmtPage.vue'),
 					},
 				],
@@ -305,13 +311,13 @@ const routes = [
 					{
 						path: 'notc-page',
 						name: 'NotcPage',
-						meta: { title: '공지사항' },
+						meta: { title: '공지사항', auth: false },
 						component: () => import('@/views/my/cs/NotcPage.vue'),
 					},
 					{
 						path: 'inqr-page',
 						name: 'InqrPage',
-						meta: { title: 'FAQ' },
+						meta: { title: 'FAQ', auth: false },
 						component: () => import('@/views/my/cs/InqrPage.vue'),
 					},
 				],
@@ -330,7 +336,8 @@ const routes = [
 			{
 				path: 'with-drwl-rslt-page',
 				name: 'WithdrwlRsltPage',
-				meta: { title: '개인정보수정' },
+				meta: { auth: false },
+
 				component: () => import('@/views/my/pv/WithdrwlRsltPage.vue'),
 			},
 		],
@@ -393,15 +400,17 @@ const router = new VueRouter({
 //글로벌 비포 가드
 router.beforeEach((to, from, next) => {
 	//https://v3.router.vuejs.org/guide/advanced/meta.html (vue-router 공식문서 참조)
-	// if (to.matched.some(record => record.meta.auth)) {
-	// 	//auth가 true이면
-	// 	if (!store.getters.isLogin) {
-	// 		next({ path: '/login', query: { redirect: to.fullPath } });
-	// 	}
-	// } else {
-	// 	next();
-	// }
+	if (to.matched.some(record => record.meta.auth)) {
+		//auth가 true이면
+		console.log('로그인 필요');
+		// if (!store.getters.isLogin) {
+		// 	next({ path: '/login', query: { redirect: to.fullPath } });
+		// }
+	} else {
+		console.log('로그인 불필요');
+	}
 	next();
+
 	//라우터 이동 후 스크롤 위치 탑으로 초기화
 	window.scrollTo(0, 0);
 
