@@ -4,7 +4,7 @@
 			<v-icon size="30">mdi-menu</v-icon>
 		</div>
 		<v-spacer />
-		<div @click="$emit('center')">꿀콘 로고</div>
+		<div @click="$router.push({ name: 'MainPage' })">꿀콘 로고(메인)</div>
 		<v-spacer />
 		<!-- <div @click="$router.push({ name: 'SignInForm' })"> -->
 		<div @click="$router.push({ name: 'MyPage' })">
