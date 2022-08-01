@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="ma-2 mb-10">
 		<SelectBanner @item="fetchProdList" />
 		<v-divider />
 		<SelectRsltBanner :title="title" />
