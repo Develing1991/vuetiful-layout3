@@ -1,12 +1,12 @@
 <template>
 	<div>
 		<!-- 꿀콘 발송방법 안내 배너 -->
-		<SlideBanner height="200" class="mb-6">
+		<SlideBanner height="300" class="mb-6">
 			<SwiperSlide v-for="i in 3" :key="i">
 				<div
 					class="secondary lighten-2 white--text font-weight-bold"
 					style="
-						height: 160px;
+						height: 260px;
 						display: flex;
 						justify-content: center;
 						align-items: center;
