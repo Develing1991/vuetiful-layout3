@@ -82,7 +82,6 @@
 					<v-btn
 						width="100%"
 						class="primary"
-						tile
 						large
 						@click="$router.push({ name: 'SignInForm' })"
 					>

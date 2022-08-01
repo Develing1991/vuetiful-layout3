@@ -41,7 +41,7 @@
 			</v-row>
 			<v-row>
 				<v-col cols="6">
-					<v-btn outlined color="primary" width="100%" tile>
+					<v-btn outlined color="primary" width="100%">
 						<div class="black--text">찜하기</div>
 						<v-icon class="red--text">mdi-heart</v-icon>
 					</v-btn>
@@ -50,8 +50,6 @@
 					<v-btn
 						color="primary"
 						width="100%"
-						tile
-						elevation="0"
 						@click="$router.push({ name: 'OrdrProdPage' })"
 					>
 						바로구매

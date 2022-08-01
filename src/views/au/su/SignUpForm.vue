@@ -44,6 +44,13 @@
 					<div class="ma-2 font-weight-bold">
 						* 사업자 인증
 						<span class="primary--text">(필수)</span>
+						<v-btn
+							v-if="isSelfBiz"
+							class="primary ml-3"
+							small
+							@click="isSelfBiz = false"
+							>취소</v-btn
+						>
 					</div>
 					<v-divider class="my-2" />
 					<template v-if="!isSelfBiz">
@@ -141,7 +148,7 @@
 						<v-divider class="my-2" />
 						<li class="grey--text caption text-center">
 							사업자등록번호 인증이 되지않을 경우 직접 입력해주세요.
-							<v-btn small class="primary my-2" width="80%" elevation="0">
+							<v-btn small class="primary my-2" width="80%">
 								<div
 									class="black--text font-weight-bold"
 									@click="isSelfBiz = true"
@@ -211,7 +218,6 @@
 								</ValidationProvider>
 								<v-btn
 									class="primary my-2"
-									tile
 									width="100%"
 									large
 									@click="showSlide = true"

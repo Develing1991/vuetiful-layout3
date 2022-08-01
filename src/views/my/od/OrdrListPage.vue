@@ -125,7 +125,6 @@
 				<v-text-field
 					v-model="searchWord"
 					placeholder="프로모션명, 상품명으로 조회할 수 있습니다."
-					readonly
 					outlined
 					hide-details
 					dense

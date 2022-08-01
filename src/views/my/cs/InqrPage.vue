@@ -46,7 +46,7 @@
 		</v-row>
 
 		<v-row class="caption">
-			<v-col cols="12" class="text-left py-2 font-weight-bold">
+			<v-col cols="12" class="text-left font-weight-bold py-2 ml-2">
 				Q. 주문/결제
 			</v-col>
 		</v-row>
