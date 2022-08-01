@@ -40,10 +40,10 @@
 					<a
 						v-for="brand in brands"
 						:key="brand.cd"
-						href=""
 						label
 						class="d-inline-block px-0 pr-2 py-2"
 						style="text-decoration: none"
+						@click="$router.push({ name: 'ProdListPage' })"
 					>
 						{{ brand.title }}</a
 					>
