@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
@@ -414,8 +415,8 @@ router.beforeEach((to, from, next) => {
 	//라우터 이동 후 스크롤 위치 탑으로 초기화
 	window.scrollTo(0, 0);
 
-	console.log(to);
-	console.log(from);
+	//console.log(to);
+	//console.log(from);
 });
 
 export default router;
