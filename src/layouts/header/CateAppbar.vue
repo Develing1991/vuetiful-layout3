@@ -22,7 +22,7 @@
 			outlined
 			:ripple="false"
 		>
-			<div class="black--text">{{ true ? '회원가입' : '로그아웃' }}</div>
+			<div class="black--text" @click="deeplink">{{ true ? '회원가입' : '로그아웃' }}</div>
 		</v-btn>
 		<v-spacer />
 
@@ -33,7 +33,13 @@
 </template>
 
 <script>
-	export default {};
+	export default {
+		methods: {
+			deeplink() {
+				location.href="bizMallTess://http://localhost:3000/po/ordr-prod-rslt/"
+			}
+		},
+	};
 </script>
 
 <style></style>
